@@ -1,342 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-  <meta name="MobileOptimized" content="width">
-  <meta name="HandheldFriendly" content="true">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Majors | umd.io</title>
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <meta name="description" content="An API for the University of Maryland.
-">
-  <link rel="stylesheet" href="/css/main.css?v=1.1">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet"> 
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/default.min.css">
-  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/api.js"></script>
-</head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Majors | umd.io</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta
+      name="description"
+      content="An API for the University of Maryland.
+"
+    />
+    <link rel="stylesheet" href="./css/main.css?v=1.1" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href=".//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/default.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/api.js"></script>
+  </head>
 
   <body>
     <div class="header">
       <div id="btn" class="btn">
-        <div class='btn-top'></div>
-        <div class='btn-middle'></div>
-        <div class='btn-bottom'></div>
+        <div class="btn-top"></div>
+        <div class="btn-middle"></div>
+        <div class="btn-bottom"></div>
       </div>
       <header>
-  <a href="https://umd.io">
-    <div class="logo">
-      <img src="/images/umdio-logo@2x.png" alt="umd.io" />
-    </div>
-  </a>
-</header>
-
+        <a href="https://umd.io">
+          <div class="logo">
+            <img src="/images/umdio-logo@2x.png" alt="umd.io" />
+          </div>
+        </a>
+      </header>
     </div>
     <div class="container">
       <div class="content">
         <div class="sidebar" id="sidebar">
           <div class="menu">
             <div id="menu" class="menu-wrapper">
-  <nav>
-    <p class="ref-title">API</p>
-    
-    
-    
-    <ul class="ref-section">
-      <li><a class="menu-item" href="/#intro">Introduction</a></li>
-    
-    <li><a class="menu-item" href="/#versions">Versioning</a></li>
-    
-    <li><a class="menu-item" href="/#pagination">Pagination</a></li>
-    
-    <li><a class="menu-item" href="/#expanding_objects">Expanding objects</a></li>
-    
-    <li><a class="menu-item" href="/#errors">Errors</a></li>
-    
-    <li><a class="menu-item" href="/#tips-tricks">Tips and Tricks</a></li>
-    
-    <li><a class="menu-item" href="/#terms">Terms of Use</a></li>
-    
-    </ul>
-    <p class="ref-title">ENDPOINTS</p>
-    <ul class="ref-section">
-    
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/bus/">Bus</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#list_routes">List routes</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#route_object">The route object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#get_routes">Get routes</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#stop_object">Stop object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#stops">List stops</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#get_stops">Get stops</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#locations">Get bus locations</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#route_locations">Locate buses on a route</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#arrivals">Get predicted arrivals</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#route_schedules">Get route schedules</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/courses/">Courses</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#search">Searching courses</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#list_courses">List all courses</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#course_object">The course object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#get_courses">Get courses</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#sections">Sections</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#section_object">Section object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#get_sections">Get sections</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#get_departments">Get departments</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-    
-      
-    
-      
-      
-      
-      <li class="ref-endpoint active">
-        <a class="ref-subsection" href="/majors/">Majors</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="#majors">The major object</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/map/">Map</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/map/#building_object">The building object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/map/#list_buildings">List buildings</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/map/#get_buildings">Get buildings</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/professors/">Professors</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/professors/#search">Searching professors</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/professors/#professor_object">The professor object</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-    
-    </ul>
-  </nav>
-</div>
+              <nav>
+                <p class="ref-title">API</p>
 
+                <ul class="ref-section">
+                  <li><a class="menu-item" href="./#intro">Introduction</a></li>
+
+                  <li>
+                    <a class="menu-item" href="./#versions">Versioning</a>
+                  </li>
+
+                  <li>
+                    <a class="menu-item" href="./#pagination">Pagination</a>
+                  </li>
+
+                  <li>
+                    <a class="menu-item" href="./#expanding_objects"
+                      >Expanding objects</a
+                    >
+                  </li>
+
+                  <li><a class="menu-item" href="./#errors">Errors</a></li>
+
+                  <li>
+                    <a class="menu-item" href="./#tips-tricks"
+                      >Tips and Tricks</a
+                    >
+                  </li>
+
+                  <li><a class="menu-item" href="./#terms">Terms of Use</a></li>
+                </ul>
+                <p class="ref-title">ENDPOINTS</p>
+                <ul class="ref-section">
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./bus/">Bus</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./bus/#list_routes"
+                          >List routes</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#route_object"
+                          >The route object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#get_routes"
+                          >Get routes</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#stop_object"
+                          >Stop object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#stops">List stops</a>
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#get_stops"
+                          >Get stops</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#locations"
+                          >Get bus locations</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#route_locations"
+                          >Locate buses on a route</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#arrivals"
+                          >Get predicted arrivals</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#route_schedules"
+                          >Get route schedules</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./courses/">Courses</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./courses/#search"
+                          >Searching courses</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#list_courses"
+                          >List all courses</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#course_object"
+                          >The course object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#get_courses"
+                          >Get courses</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#sections"
+                          >Sections</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#section_object"
+                          >Section object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#get_sections"
+                          >Get sections</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#get_departments"
+                          >Get departments</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint active">
+                    <a class="ref-subsection" href="./majors/">Majors</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="#majors">The major object</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./map/">Map</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./map/#building_object"
+                          >The building object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./map/#list_buildings"
+                          >List buildings</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./map/#get_buildings"
+                          >Get buildings</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./professors/"
+                      >Professors</a
+                    >
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./professors/#search"
+                          >Searching professors</a
+                        >
+                      </li>
+
+                      <li>
+                        <a
+                          class="menu-item"
+                          href="./professors/#professor_object"
+                          >The professor object</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
         <div class="docs">
           <section class="post">
-  <div class="post-description">
-    <h1>Majors</h1>
-    <p>This endpoint lets you get major data from the University of Maryland. Currently, our data is from the <a href="https://admissions.umd.edu/explore/colleges-and-schools/majors">majors page</a> on the University of Maryland website.</p>
+            <div class="post-description">
+              <h1>Majors</h1>
+              <p>
+                This endpoint lets you get major data from the University of
+                Maryland. Currently, our data is from the
+                <a
+                  href="https://admissions.umd.edu/explore/colleges-and-schools/majors"
+                  >majors page</a
+                >
+                on the University of Maryland website.
+              </p>
 
-<p>This endpoint is a work-in progress, so some data may be inaccurate or missing.</p>
+              <p>
+                This endpoint is a work-in progress, so some data may be
+                inaccurate or missing.
+              </p>
 
-<!-- EXAMPLE -->
+              <!-- EXAMPLE -->
 
-<h3 id="majors-endpoint">Majors Endpoint</h3>
+              <h3 id="majors-endpoint">Majors Endpoint</h3>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/majors</code></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/majors</code
+                >
+              </p>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>
+                This endpoint lets you get major data from the University of
+                Maryland. Currently, our data is from the
+                <a
+                  href="https://admissions.umd.edu/explore/colleges-and-schools/majors"
+                  >majors page</a
+                >
+                on the University of Maryland website.
+              </p>
 
-  </div>
-  <div class="post-example">
-    <p>This endpoint lets you get major data from the University of Maryland. Currently, our data is from the <a href="https://admissions.umd.edu/explore/colleges-and-schools/majors">majors page</a> on the University of Maryland website.</p>
+              <p>
+                This endpoint is a work-in progress, so some data may be
+                inaccurate or missing.
+              </p>
 
-<p>This endpoint is a work-in progress, so some data may be inaccurate or missing.</p>
+              <!-- EXAMPLE -->
 
-<!-- EXAMPLE -->
+              <h3 id="majors-endpoint">Majors Endpoint</h3>
 
-<h3 id="majors-endpoint">Majors Endpoint</h3>
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/majors</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/majors</code></p>
+              <!-- END -->
+            </div>
+          </section>
+          <!-- PAGE CAT = majors -->
 
-<!-- END -->
+          <section class="post" id="majors">
+            <div class="post-description">
+              <h2>The major object</h2>
+              <p>
+                The major object represents a single major. The properties of a
+                major are:
+              </p>
 
-  </div>
-</section>
-<!-- PAGE CAT = majors --> 
+              <p>
+                <code class="highlighter-rouge">major_id</code> – The ID
+                corresponding with a major
+              </p>
 
-<section class="post" id="majors">
-  <div class="post-description">
-    <h2>The major object</h2>
-    <p>The major object represents a single major. The properties of a major are:</p>
+              <p>
+                <code class="highlighter-rouge">name</code> – The name of a
+                major
+              </p>
 
-<p><code class="highlighter-rouge">major_id</code> – The ID corresponding with a major</p>
+              <p>
+                <code class="highlighter-rouge">college</code> – The college
+                corresponding to the major. (Currently unfinished)
+              </p>
 
-<p><code class="highlighter-rouge">name</code> – The name of a major</p>
+              <p>
+                <code class="highlighter-rouge">url</code> – The URL of the main
+                page of a major.
+              </p>
 
-<p><code class="highlighter-rouge">college</code> – The college corresponding to the major. (Currently unfinished)</p>
+              <!-- EXAMPLE -->
 
-<p><code class="highlighter-rouge">url</code> – The URL of the main page of a major.</p>
+              <p><em>Trimmed sample response:</em></p>
 
-<!-- EXAMPLE -->
-
-<p><em>Trimmed sample response:</em></p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nl">"major_id"</span><span class="p">:</span><span class="s2">"AGRICULTURALANDRESOURCEECONOMICS"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Agricultural and Resource Economics"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"college"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nl">"url"</span><span class="p">:</span><span class="s2">"http://www.arec.umd.edu/undergraduate/major-requirements/agricultural-and-resource-economics"</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>
+                The major object represents a single major. The properties of a
+                major are:
+              </p>
 
-  </div>
-  <div class="post-example">
-    <p>The major object represents a single major. The properties of a major are:</p>
+              <p>
+                <code class="highlighter-rouge">major_id</code> – The ID
+                corresponding with a major
+              </p>
 
-<p><code class="highlighter-rouge">major_id</code> – The ID corresponding with a major</p>
+              <p>
+                <code class="highlighter-rouge">name</code> – The name of a
+                major
+              </p>
 
-<p><code class="highlighter-rouge">name</code> – The name of a major</p>
+              <p>
+                <code class="highlighter-rouge">college</code> – The college
+                corresponding to the major. (Currently unfinished)
+              </p>
 
-<p><code class="highlighter-rouge">college</code> – The college corresponding to the major. (Currently unfinished)</p>
+              <p>
+                <code class="highlighter-rouge">url</code> – The URL of the main
+                page of a major.
+              </p>
 
-<p><code class="highlighter-rouge">url</code> – The URL of the main page of a major.</p>
+              <!-- EXAMPLE -->
 
-<!-- EXAMPLE -->
+              <p><em>Trimmed sample response:</em></p>
 
-<p><em>Trimmed sample response:</em></p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nl">"major_id"</span><span class="p">:</span><span class="s2">"AGRICULTURALANDRESOURCEECONOMICS"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Agricultural and Resource Economics"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"college"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nl">"url"</span><span class="p">:</span><span class="s2">"http://www.arec.umd.edu/undergraduate/major-requirements/agricultural-and-resource-economics"</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
-
-  </div>
-</section>
+              <!-- END -->
+            </div>
+          </section>
 
           <footer>
-  <div class="footer-text">
-  made with love, by students, for students. <br>
-  get in touch if you want help, or if you want to help. <br><br>
-  <a href="mailto:hi@umd.io">email</a> &nbsp;&nbsp;
-  <a href="http://github.com/umdio">github</a> &nbsp;&nbsp;
-  © umdio 2015-2019
-  </div>
-</footer>
-
+            <div class="footer-text">
+              made with love, by students, for students. <br />
+              get in touch if you want help, or if you want to help.
+              <br /><br />
+              <a href="mailto:hi@umd.io">email</a> &nbsp;&nbsp;
+              <a href="http://github.com/umdio">github</a> &nbsp;&nbsp; © umdio
+              2015-2019
+            </div>
+          </footer>
         </div>
       </div>
     </div>

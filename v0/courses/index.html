@@ -1,313 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-  <meta name="MobileOptimized" content="width">
-  <meta name="HandheldFriendly" content="true">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Courses | umd.io</title>
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <meta name="description" content="An API for the University of Maryland.
-">
-  <link rel="stylesheet" href="/css/main.css?v=1.1">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet"> 
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/default.min.css">
-  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/api.js"></script>
-</head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Courses | umd.io</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta
+      name="description"
+      content="An API for the University of Maryland.
+"
+    />
+    <link rel="stylesheet" href="./css/main.css?v=1.1" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href=".//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/default.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/api.js"></script>
+  </head>
 
   <body>
     <div class="header">
       <div id="btn" class="btn">
-        <div class='btn-top'></div>
-        <div class='btn-middle'></div>
-        <div class='btn-bottom'></div>
+        <div class="btn-top"></div>
+        <div class="btn-middle"></div>
+        <div class="btn-bottom"></div>
       </div>
       <header>
-  <a href="https://umd.io">
-    <div class="logo">
-      <img src="/images/umdio-logo@2x.png" alt="umd.io" />
-    </div>
-  </a>
-</header>
-
+        <a href="https://umd.io">
+          <div class="logo">
+            <img src="/images/umdio-logo@2x.png" alt="umd.io" />
+          </div>
+        </a>
+      </header>
     </div>
     <div class="container">
       <div class="content">
         <div class="sidebar" id="sidebar">
           <div class="menu">
             <div id="menu" class="menu-wrapper">
-  <nav>
-    <p class="ref-title">API</p>
-    
-    
-    
-    <ul class="ref-section">
-      <li><a class="menu-item" href="/#intro">Introduction</a></li>
-    
-    <li><a class="menu-item" href="/#versions">Versioning</a></li>
-    
-    <li><a class="menu-item" href="/#pagination">Pagination</a></li>
-    
-    <li><a class="menu-item" href="/#expanding_objects">Expanding objects</a></li>
-    
-    <li><a class="menu-item" href="/#errors">Errors</a></li>
-    
-    <li><a class="menu-item" href="/#tips-tricks">Tips and Tricks</a></li>
-    
-    <li><a class="menu-item" href="/#terms">Terms of Use</a></li>
-    
-    </ul>
-    <p class="ref-title">ENDPOINTS</p>
-    <ul class="ref-section">
-    
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/bus/">Bus</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#list_routes">List routes</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#route_object">The route object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#get_routes">Get routes</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#stop_object">Stop object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#stops">List stops</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#get_stops">Get stops</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#locations">Get bus locations</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#route_locations">Locate buses on a route</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#arrivals">Get predicted arrivals</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#route_schedules">Get route schedules</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-      
-      
-      <li class="ref-endpoint active">
-        <a class="ref-subsection" href="/courses/">Courses</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="#search">Searching courses</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#list_courses">List all courses</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#course_object">The course object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#get_courses">Get courses</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#sections">Sections</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#section_object">Section object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#get_sections">Get sections</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#get_departments">Get departments</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-    
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/majors/">Majors</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/majors/#majors">The major object</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/map/">Map</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/map/#building_object">The building object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/map/#list_buildings">List buildings</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/map/#get_buildings">Get buildings</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/professors/">Professors</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/professors/#search">Searching professors</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/professors/#professor_object">The professor object</a></li>
-        
-        </ul>
-      </li>
-      
-    
-    </ul>
-  </nav>
-</div>
+              <nav>
+                <p class="ref-title">API</p>
 
+                <ul class="ref-section">
+                  <li><a class="menu-item" href="./#intro">Introduction</a></li>
+
+                  <li>
+                    <a class="menu-item" href="./#versions">Versioning</a>
+                  </li>
+
+                  <li>
+                    <a class="menu-item" href="./#pagination">Pagination</a>
+                  </li>
+
+                  <li>
+                    <a class="menu-item" href="./#expanding_objects"
+                      >Expanding objects</a
+                    >
+                  </li>
+
+                  <li><a class="menu-item" href="./#errors">Errors</a></li>
+
+                  <li>
+                    <a class="menu-item" href="./#tips-tricks"
+                      >Tips and Tricks</a
+                    >
+                  </li>
+
+                  <li><a class="menu-item" href="./#terms">Terms of Use</a></li>
+                </ul>
+                <p class="ref-title">ENDPOINTS</p>
+                <ul class="ref-section">
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./bus/">Bus</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./bus/#list_routes"
+                          >List routes</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#route_object"
+                          >The route object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#get_routes"
+                          >Get routes</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#stop_object"
+                          >Stop object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#stops">List stops</a>
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#get_stops"
+                          >Get stops</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#locations"
+                          >Get bus locations</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#route_locations"
+                          >Locate buses on a route</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#arrivals"
+                          >Get predicted arrivals</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#route_schedules"
+                          >Get route schedules</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint active">
+                    <a class="ref-subsection" href="./courses/">Courses</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="#search"
+                          >Searching courses</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#list_courses"
+                          >List all courses</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#course_object"
+                          >The course object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#get_courses">Get courses</a>
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#sections">Sections</a>
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#section_object"
+                          >Section object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#get_sections"
+                          >Get sections</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#get_departments"
+                          >Get departments</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./majors/">Majors</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./majors/#majors"
+                          >The major object</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./map/">Map</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./map/#building_object"
+                          >The building object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./map/#list_buildings"
+                          >List buildings</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./map/#get_buildings"
+                          >Get buildings</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./professors/"
+                      >Professors</a
+                    >
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./professors/#search"
+                          >Searching professors</a
+                        >
+                      </li>
+
+                      <li>
+                        <a
+                          class="menu-item"
+                          href="./professors/#professor_object"
+                          >The professor object</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
         <div class="docs">
           <section class="post">
-  <div class="post-description">
-    <h1>Courses</h1>
-    <p>This endpoint lets you get data about university courses and their sections. You can get one course or section at a time, several courses or sections at a time, or a list of all the courses.</p>
+            <div class="post-description">
+              <h1>Courses</h1>
+              <p>
+                This endpoint lets you get data about university courses and
+                their sections. You can get one course or section at a time,
+                several courses or sections at a time, or a list of all the
+                courses.
+              </p>
 
-<hr />
+              <hr />
 
-<h4 id="parameters">Parameters:</h4>
-<p><code class="highlighter-rouge">semester</code> – a six-digit string <code class="highlighter-rouge">&lt;year&gt;&lt;month&gt;</code>. For example, <em>“201401”</em> for 2014’s Winter semester or <em>“201508”</em> for 2015’s Fall semseter.</p>
+              <h4 id="parameters">Parameters:</h4>
+              <p>
+                <code class="highlighter-rouge">semester</code> – a six-digit
+                string
+                <code class="highlighter-rouge">&lt;year&gt;&lt;month&gt;</code
+                >. For example, <em>“201401”</em> for 2014’s Winter semester or
+                <em>“201508”</em> for 2015’s Fall semseter.
+              </p>
 
-<p><em>See <code class="highlighter-rouge">https://api.umd.io/v0/courses/semesters</code> for a list of available semesters.</em></p>
+              <p>
+                <em
+                  >See
+                  <code class="highlighter-rouge"
+                    >https://api.umd.io/v0/courses/semesters</code
+                  >
+                  for a list of available semesters.</em
+                >
+              </p>
 
-<!-- EXAMPLE -->
+              <!-- EXAMPLE -->
 
-<h3 id="courses-endpoint">Courses Endpoint</h3>
+              <h3 id="courses-endpoint">Courses Endpoint</h3>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses</code></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses</code
+                >
+              </p>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>
+                This endpoint lets you get data about university courses and
+                their sections. You can get one course or section at a time,
+                several courses or sections at a time, or a list of all the
+                courses.
+              </p>
 
-  </div>
-  <div class="post-example">
-    <p>This endpoint lets you get data about university courses and their sections. You can get one course or section at a time, several courses or sections at a time, or a list of all the courses.</p>
+              <hr />
 
-<hr />
+              <h4 id="parameters">Parameters:</h4>
+              <p>
+                <code class="highlighter-rouge">semester</code> – a six-digit
+                string
+                <code class="highlighter-rouge">&lt;year&gt;&lt;month&gt;</code
+                >. For example, <em>“201401”</em> for 2014’s Winter semester or
+                <em>“201508”</em> for 2015’s Fall semseter.
+              </p>
 
-<h4 id="parameters">Parameters:</h4>
-<p><code class="highlighter-rouge">semester</code> – a six-digit string <code class="highlighter-rouge">&lt;year&gt;&lt;month&gt;</code>. For example, <em>“201401”</em> for 2014’s Winter semester or <em>“201508”</em> for 2015’s Fall semseter.</p>
+              <p>
+                <em
+                  >See
+                  <code class="highlighter-rouge"
+                    >https://api.umd.io/v0/courses/semesters</code
+                  >
+                  for a list of available semesters.</em
+                >
+              </p>
 
-<p><em>See <code class="highlighter-rouge">https://api.umd.io/v0/courses/semesters</code> for a list of available semesters.</em></p>
+              <!-- EXAMPLE -->
 
-<!-- EXAMPLE -->
+              <h3 id="courses-endpoint">Courses Endpoint</h3>
 
-<h3 id="courses-endpoint">Courses Endpoint</h3>
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses</code></p>
+              <!-- END -->
+            </div>
+          </section>
+          <!-- PAGE CAT = courses -->
 
-<!-- END -->
+          <section class="post" id="search">
+            <div class="post-description">
+              <h2>Searching courses</h2>
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses</code
+                >
+              </p>
 
-  </div>
-</section>
-<!-- PAGE CAT = courses --> 
+              <p>
+                <em>Returns:</em> a <a href="./#pagination">Paginated</a> array
+                of <a href="#course_object">Course objects</a>.
+              </p>
 
-<section class="post" id="search">
-  <div class="post-description">
-    <h2>Searching courses</h2>
-    <p><code class="highlighter-rouge">https://api.umd.io/v0/courses</code></p>
+              <hr />
 
-<p><em>Returns:</em> a <a href="/#pagination">Paginated</a> array of <a href="#course_object">Course objects</a>.</p>
+              <h3 id="parameters">Parameters:</h3>
 
-<hr />
+              <p>
+                <code class="highlighter-rouge">sort</code> – a comma-separated
+                list of course properties. Defaults to ASCENDING order, use a
+                <code class="highlighter-rouge">-</code> (minus) prefix for
+                DESCENDING order. <br />For example,
+                <code class="highlighter-rouge">?sort=course_id,-credits</code>
+                sorts the results ASCENDING by course_id and DESCENDING by
+                credits.
+              </p>
 
-<h3 id="parameters">Parameters:</h3>
+              <p>
+                To <strong>search</strong> for courses, use each course property
+                as a parameter and one of the following comparisions:
+                <code class="highlighter-rouge">=</code> (equals),
+                <code class="highlighter-rouge">!=</code> (not equals),
+                <code class="highlighter-rouge">&lt;</code> (less than),
+                <code class="highlighter-rouge">&gt;</code> (greater than),
+                <code class="highlighter-rouge">&lt;=</code> (less than or
+                equals) and
+                <code class="highlighter-rouge">&gt;=</code> (greater than or
+                equals) followed by the value or a list of values. <br />For
+                example,
+                <code class="highlighter-rouge"
+                  >?dept_id=CMSC,BMGT&amp;credits&lt;2</code
+                >
+                gives all courses in the CMSC or BMGT departments worth less
+                than 2 credits.
+              </p>
 
-<p><code class="highlighter-rouge">sort</code> – a comma-separated list of course properties. Defaults to ASCENDING order, use a <code class="highlighter-rouge">-</code> (minus) prefix for DESCENDING order.
-<br />For example, <code class="highlighter-rouge">?sort=course_id,-credits</code> sorts the results ASCENDING by course_id and DESCENDING by credits.</p>
+              <p>
+                <em
+                  >See the <a href="./#course_object">Course object</a> for a
+                  full list of available properties.</em
+                >
+              </p>
 
-<p>To <strong>search</strong> for courses, use each course property as a parameter and one of the following comparisions: <code class="highlighter-rouge">=</code> (equals), <code class="highlighter-rouge">!=</code> (not equals), <code class="highlighter-rouge">&lt;</code> (less than), <code class="highlighter-rouge">&gt;</code> (greater than), <code class="highlighter-rouge">&lt;=</code> (less than or equals) and <code class="highlighter-rouge">&gt;=</code> (greater than or equals) followed by the value or a list of values.
-<br />For example, <code class="highlighter-rouge">?dept_id=CMSC,BMGT&amp;credits&lt;2</code> gives all courses in the CMSC or BMGT departments worth less than 2 credits.</p>
+              <hr />
 
-<p><em>See the <a href="/#course_object">Course object</a> for a full list of available properties.</em></p>
+              <p>
+                When searching array properties, the
+                <code class="highlighter-rouge">|</code> (pipe) delimeter may be
+                used instead of a comma to only return results that all the
+                values. <br />For example,
+                <code class="highlighter-rouge"
+                  >?grading_method=Audit|Pass-Fail</code
+                >
+                gives all courses whose grading method is both Audit and
+                Pass-Fail.
+              </p>
 
-<hr />
+              <!-- EXAMPLE -->
 
-<p>When searching array properties, the <code class="highlighter-rouge">|</code> (pipe) delimeter may be used instead of a comma to only return results that all the values.
-<br />For example, <code class="highlighter-rouge">?grading_method=Audit|Pass-Fail</code> gives all courses whose grading method is both Audit and Pass-Fail.</p>
+              <p>
+                Request:
+                <code class="highlighter-rouge"
+                  >GET
+                  https://api.umd.io/v0/courses?dept_id=CMSC,BMGT&amp;credits&lt;2</code
+                >
+                Trimmed Response:
+              </p>
 
-<!-- EXAMPLE -->
-
-<p>Request: <code class="highlighter-rouge">GET https://api.umd.io/v0/courses?dept_id=CMSC,BMGT&amp;credits&lt;2</code>
-Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"course_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BMGT888W"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Special Topics in Supply Chain Management; Workshop in Supply Chain Management"</span><span class="p">,</span><span class="w">
@@ -332,40 +456,89 @@ Trimmed Response:</p>
   </span><span class="p">}</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses</code
+                >
+              </p>
 
-  </div>
-  <div class="post-example">
-    <p><code class="highlighter-rouge">https://api.umd.io/v0/courses</code></p>
+              <p>
+                <em>Returns:</em> a <a href="./#pagination">Paginated</a> array
+                of <a href="#course_object">Course objects</a>.
+              </p>
 
-<p><em>Returns:</em> a <a href="/#pagination">Paginated</a> array of <a href="#course_object">Course objects</a>.</p>
+              <hr />
 
-<hr />
+              <h3 id="parameters">Parameters:</h3>
 
-<h3 id="parameters">Parameters:</h3>
+              <p>
+                <code class="highlighter-rouge">sort</code> – a comma-separated
+                list of course properties. Defaults to ASCENDING order, use a
+                <code class="highlighter-rouge">-</code> (minus) prefix for
+                DESCENDING order. <br />For example,
+                <code class="highlighter-rouge">?sort=course_id,-credits</code>
+                sorts the results ASCENDING by course_id and DESCENDING by
+                credits.
+              </p>
 
-<p><code class="highlighter-rouge">sort</code> – a comma-separated list of course properties. Defaults to ASCENDING order, use a <code class="highlighter-rouge">-</code> (minus) prefix for DESCENDING order.
-<br />For example, <code class="highlighter-rouge">?sort=course_id,-credits</code> sorts the results ASCENDING by course_id and DESCENDING by credits.</p>
+              <p>
+                To <strong>search</strong> for courses, use each course property
+                as a parameter and one of the following comparisions:
+                <code class="highlighter-rouge">=</code> (equals),
+                <code class="highlighter-rouge">!=</code> (not equals),
+                <code class="highlighter-rouge">&lt;</code> (less than),
+                <code class="highlighter-rouge">&gt;</code> (greater than),
+                <code class="highlighter-rouge">&lt;=</code> (less than or
+                equals) and
+                <code class="highlighter-rouge">&gt;=</code> (greater than or
+                equals) followed by the value or a list of values. <br />For
+                example,
+                <code class="highlighter-rouge"
+                  >?dept_id=CMSC,BMGT&amp;credits&lt;2</code
+                >
+                gives all courses in the CMSC or BMGT departments worth less
+                than 2 credits.
+              </p>
 
-<p>To <strong>search</strong> for courses, use each course property as a parameter and one of the following comparisions: <code class="highlighter-rouge">=</code> (equals), <code class="highlighter-rouge">!=</code> (not equals), <code class="highlighter-rouge">&lt;</code> (less than), <code class="highlighter-rouge">&gt;</code> (greater than), <code class="highlighter-rouge">&lt;=</code> (less than or equals) and <code class="highlighter-rouge">&gt;=</code> (greater than or equals) followed by the value or a list of values.
-<br />For example, <code class="highlighter-rouge">?dept_id=CMSC,BMGT&amp;credits&lt;2</code> gives all courses in the CMSC or BMGT departments worth less than 2 credits.</p>
+              <p>
+                <em
+                  >See the <a href="./#course_object">Course object</a> for a
+                  full list of available properties.</em
+                >
+              </p>
 
-<p><em>See the <a href="/#course_object">Course object</a> for a full list of available properties.</em></p>
+              <hr />
 
-<hr />
+              <p>
+                When searching array properties, the
+                <code class="highlighter-rouge">|</code> (pipe) delimeter may be
+                used instead of a comma to only return results that all the
+                values. <br />For example,
+                <code class="highlighter-rouge"
+                  >?grading_method=Audit|Pass-Fail</code
+                >
+                gives all courses whose grading method is both Audit and
+                Pass-Fail.
+              </p>
 
-<p>When searching array properties, the <code class="highlighter-rouge">|</code> (pipe) delimeter may be used instead of a comma to only return results that all the values.
-<br />For example, <code class="highlighter-rouge">?grading_method=Audit|Pass-Fail</code> gives all courses whose grading method is both Audit and Pass-Fail.</p>
+              <!-- EXAMPLE -->
 
-<!-- EXAMPLE -->
+              <p>
+                Request:
+                <code class="highlighter-rouge"
+                  >GET
+                  https://api.umd.io/v0/courses?dept_id=CMSC,BMGT&amp;credits&lt;2</code
+                >
+                Trimmed Response:
+              </p>
 
-<p>Request: <code class="highlighter-rouge">GET https://api.umd.io/v0/courses?dept_id=CMSC,BMGT&amp;credits&lt;2</code>
-Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"course_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BMGT888W"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Special Topics in Supply Chain Management; Workshop in Supply Chain Management"</span><span class="p">,</span><span class="w">
@@ -390,29 +563,45 @@ Trimmed Response:</p>
   </span><span class="p">}</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="list_courses">
+            <div class="post-description">
+              <h2>List all courses</h2>
+              <p>
+                List all the courses available (for the given semester, or the
+                current semester by default).
+              </p>
 
-<section class="post" id="list_courses">
-  <div class="post-description">
-    <h2>List all courses</h2>
-    <p>List all the courses available (for the given semester, or the current semester by default).</p>
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/list</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/list</code></p>
+              <p>
+                <em>Returns:</em> Array of objects with three properties:
+                <code class="highlighter-rouge">course_id</code>,
+                <code class="highlighter-rouge">name</code>, and
+                <code class="highlighter-rouge">department</code>
+              </p>
 
-<p><em>Returns:</em> Array of objects with three properties: <code class="highlighter-rouge">course_id</code>, <code class="highlighter-rouge">name</code>, and <code class="highlighter-rouge">department</code></p>
+              <!-- EXAMPLE -->
 
-<!-- EXAMPLE -->
+              <p>
+                Request:
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/courses/list</code
+                >
+                Trimmed Response:
+              </p>
 
-<p>Request: <code class="highlighter-rouge">GET https://api.umd.io/v0/courses/list</code>
-Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"course_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AASP100"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Introduction to African American Studies"</span><span class="p">,</span><span class="w">
@@ -424,25 +613,41 @@ Trimmed Response:</p>
     </span><span class="nl">"department"</span><span class="p">:</span><span class="s2">"African American Studies"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>
+                List all the courses available (for the given semester, or the
+                current semester by default).
+              </p>
 
-  </div>
-  <div class="post-example">
-    <p>List all the courses available (for the given semester, or the current semester by default).</p>
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/list</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/list</code></p>
+              <p>
+                <em>Returns:</em> Array of objects with three properties:
+                <code class="highlighter-rouge">course_id</code>,
+                <code class="highlighter-rouge">name</code>, and
+                <code class="highlighter-rouge">department</code>
+              </p>
 
-<p><em>Returns:</em> Array of objects with three properties: <code class="highlighter-rouge">course_id</code>, <code class="highlighter-rouge">name</code>, and <code class="highlighter-rouge">department</code></p>
+              <!-- EXAMPLE -->
 
-<!-- EXAMPLE -->
+              <p>
+                Request:
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/courses/list</code
+                >
+                Trimmed Response:
+              </p>
 
-<p>Request: <code class="highlighter-rouge">GET https://api.umd.io/v0/courses/list</code>
-Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"course_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AASP100"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Introduction to African American Studies"</span><span class="p">,</span><span class="w">
@@ -454,47 +659,102 @@ Trimmed Response:</p>
     </span><span class="nl">"department"</span><span class="p">:</span><span class="s2">"African American Studies"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="course_object">
+            <div class="post-description">
+              <h2>The course object</h2>
+              <p>
+                The course object represents a single UMD course. The properties
+                of a course are:
+              </p>
 
-<section class="post" id="course_object">
-  <div class="post-description">
-    <h2>The course object</h2>
-    <p>The course object represents a single UMD course. The properties of a course are:</p>
+              <p>
+                <code class="highlighter-rouge">course_id</code> – a unique
+                string ID with a four-letter
+                <code class="highlighter-rouge">dept_id</code> followed by a
+                three digit course number and an optional letter. Examples:
+                <em>“CSMC132”, “BMGT468Z”</em>.
+              </p>
 
-<p><code class="highlighter-rouge">course_id</code> – a unique string ID with a four-letter <code class="highlighter-rouge">dept_id</code> followed by a three digit course number and an optional letter. Examples: <em>“CSMC132”, “BMGT468Z”</em>.</p>
+              <p>
+                <code class="highlighter-rouge">name</code> – string name of the
+                course.
+              </p>
 
-<p><code class="highlighter-rouge">name</code> – string name of the course.</p>
+              <p>
+                <code class="highlighter-rouge">dept_id</code> – Four-letter
+                string like ENGL or BMGT.
+              </p>
 
-<p><code class="highlighter-rouge">dept_id</code> – Four-letter string like ENGL or BMGT.</p>
+              <p>
+                <code class="highlighter-rouge">department</code> – Full name of
+                the department that offers a course.
+              </p>
 
-<p><code class="highlighter-rouge">department</code> – Full name of the department that offers a course.</p>
+              <p>
+                <code class="highlighter-rouge">semester</code> – Six-digit
+                number identifying the semester the course is offered.
+                Currently, the API only offers courses for the current semester,
+                but that will change soon.
+              </p>
 
-<p><code class="highlighter-rouge">semester</code> – Six-digit number identifying the semester the course is offered. Currently, the API only offers courses for the current semester, but that will change soon.</p>
+              <p>
+                <code class="highlighter-rouge">credits</code> – One-digit
+                number of credits the course is worth.
+              </p>
 
-<p><code class="highlighter-rouge">credits</code> – One-digit number of credits the course is worth.</p>
+              <p>
+                <code class="highlighter-rouge">grading_method</code> – Array of
+                string grading options available. The possible options are
+                <em>“Regular”, “Pass-Fail”, “Audit”, and “Sat-Fail”</em>
+              </p>
 
-<p><code class="highlighter-rouge">grading_method</code> – Array of string grading options available. The possible options are <em>“Regular”, “Pass-Fail”, “Audit”, and “Sat-Fail”</em></p>
+              <p>
+                <code class="highlighter-rouge">core</code> – Array of strings
+                of CORE requirements filled by a course.
+              </p>
 
-<p><code class="highlighter-rouge">core</code> – Array of strings of CORE requirements filled by a course.</p>
+              <p>
+                <code class="highlighter-rouge">gen_ed</code> – Array of strings
+                of GEN. ED requirements filled by a course.
+              </p>
 
-<p><code class="highlighter-rouge">gen_ed</code> – Array of strings of GEN. ED requirements filled by a course.</p>
+              <p>
+                <code class="highlighter-rouge">description</code> – String
+                description of a course.
+              </p>
 
-<p><code class="highlighter-rouge">description</code> – String description of a course.</p>
+              <p>
+                <code class="highlighter-rouge">relationships</code> – contains
+                the relationships and restrictions of a course which can be:
+                <code class="highlighter-rouge">coreqs</code>,
+                <code class="highlighter-rouge">prereqs</code>,
+                <code class="highlighter-rouge">restrictions</code>,
+                <code class="highlighter-rouge">restricted_to</code>,
+                <code class="highlighter-rouge">credit_only_granted_for</code>,
+                <code class="highlighter-rouge">credit_granted_for</code>,<code
+                  class="highlighter-rouge"
+                  >formerly</code
+                >, and <code class="highlighter-rouge">also_offered_as</code>.
+              </p>
 
-<p><code class="highlighter-rouge">relationships</code> – contains the relationships and restrictions of a course which can be: <code class="highlighter-rouge">coreqs</code>, <code class="highlighter-rouge">prereqs</code>, <code class="highlighter-rouge">restrictions</code>, <code class="highlighter-rouge">restricted_to</code>, <code class="highlighter-rouge">credit_only_granted_for</code>, <code class="highlighter-rouge">credit_granted_for</code>,<code class="highlighter-rouge">formerly</code>, and <code class="highlighter-rouge">also_offered_as</code>.</p>
+              <p>
+                <code class="highlighter-rouge">sections</code> – Array of
+                <code class="highlighter-rouge">section_id</code> strings of the
+                sections of a course. See
+                <a href="#section_object">section object</a>.
+              </p>
 
-<p><code class="highlighter-rouge">sections</code> – Array of <code class="highlighter-rouge">section_id</code> strings of the sections of a course. See <a href="#section_object">section object</a>.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample course object</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample course object</strong></p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nl">"course_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENEE380"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electromagnetic Theory"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"dept_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENEE"</span><span class="p">,</span><span class="w">
@@ -521,43 +781,98 @@ Trimmed Response:</p>
     </span><span class="s2">"ENEE380-0103"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>
+                The course object represents a single UMD course. The properties
+                of a course are:
+              </p>
 
-  </div>
-  <div class="post-example">
-    <p>The course object represents a single UMD course. The properties of a course are:</p>
+              <p>
+                <code class="highlighter-rouge">course_id</code> – a unique
+                string ID with a four-letter
+                <code class="highlighter-rouge">dept_id</code> followed by a
+                three digit course number and an optional letter. Examples:
+                <em>“CSMC132”, “BMGT468Z”</em>.
+              </p>
 
-<p><code class="highlighter-rouge">course_id</code> – a unique string ID with a four-letter <code class="highlighter-rouge">dept_id</code> followed by a three digit course number and an optional letter. Examples: <em>“CSMC132”, “BMGT468Z”</em>.</p>
+              <p>
+                <code class="highlighter-rouge">name</code> – string name of the
+                course.
+              </p>
 
-<p><code class="highlighter-rouge">name</code> – string name of the course.</p>
+              <p>
+                <code class="highlighter-rouge">dept_id</code> – Four-letter
+                string like ENGL or BMGT.
+              </p>
 
-<p><code class="highlighter-rouge">dept_id</code> – Four-letter string like ENGL or BMGT.</p>
+              <p>
+                <code class="highlighter-rouge">department</code> – Full name of
+                the department that offers a course.
+              </p>
 
-<p><code class="highlighter-rouge">department</code> – Full name of the department that offers a course.</p>
+              <p>
+                <code class="highlighter-rouge">semester</code> – Six-digit
+                number identifying the semester the course is offered.
+                Currently, the API only offers courses for the current semester,
+                but that will change soon.
+              </p>
 
-<p><code class="highlighter-rouge">semester</code> – Six-digit number identifying the semester the course is offered. Currently, the API only offers courses for the current semester, but that will change soon.</p>
+              <p>
+                <code class="highlighter-rouge">credits</code> – One-digit
+                number of credits the course is worth.
+              </p>
 
-<p><code class="highlighter-rouge">credits</code> – One-digit number of credits the course is worth.</p>
+              <p>
+                <code class="highlighter-rouge">grading_method</code> – Array of
+                string grading options available. The possible options are
+                <em>“Regular”, “Pass-Fail”, “Audit”, and “Sat-Fail”</em>
+              </p>
 
-<p><code class="highlighter-rouge">grading_method</code> – Array of string grading options available. The possible options are <em>“Regular”, “Pass-Fail”, “Audit”, and “Sat-Fail”</em></p>
+              <p>
+                <code class="highlighter-rouge">core</code> – Array of strings
+                of CORE requirements filled by a course.
+              </p>
 
-<p><code class="highlighter-rouge">core</code> – Array of strings of CORE requirements filled by a course.</p>
+              <p>
+                <code class="highlighter-rouge">gen_ed</code> – Array of strings
+                of GEN. ED requirements filled by a course.
+              </p>
 
-<p><code class="highlighter-rouge">gen_ed</code> – Array of strings of GEN. ED requirements filled by a course.</p>
+              <p>
+                <code class="highlighter-rouge">description</code> – String
+                description of a course.
+              </p>
 
-<p><code class="highlighter-rouge">description</code> – String description of a course.</p>
+              <p>
+                <code class="highlighter-rouge">relationships</code> – contains
+                the relationships and restrictions of a course which can be:
+                <code class="highlighter-rouge">coreqs</code>,
+                <code class="highlighter-rouge">prereqs</code>,
+                <code class="highlighter-rouge">restrictions</code>,
+                <code class="highlighter-rouge">restricted_to</code>,
+                <code class="highlighter-rouge">credit_only_granted_for</code>,
+                <code class="highlighter-rouge">credit_granted_for</code>,<code
+                  class="highlighter-rouge"
+                  >formerly</code
+                >, and <code class="highlighter-rouge">also_offered_as</code>.
+              </p>
 
-<p><code class="highlighter-rouge">relationships</code> – contains the relationships and restrictions of a course which can be: <code class="highlighter-rouge">coreqs</code>, <code class="highlighter-rouge">prereqs</code>, <code class="highlighter-rouge">restrictions</code>, <code class="highlighter-rouge">restricted_to</code>, <code class="highlighter-rouge">credit_only_granted_for</code>, <code class="highlighter-rouge">credit_granted_for</code>,<code class="highlighter-rouge">formerly</code>, and <code class="highlighter-rouge">also_offered_as</code>.</p>
+              <p>
+                <code class="highlighter-rouge">sections</code> – Array of
+                <code class="highlighter-rouge">section_id</code> strings of the
+                sections of a course. See
+                <a href="#section_object">section object</a>.
+              </p>
 
-<p><code class="highlighter-rouge">sections</code> – Array of <code class="highlighter-rouge">section_id</code> strings of the sections of a course. See <a href="#section_object">section object</a>.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample course object</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample course object</strong></p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nl">"course_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENEE380"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electromagnetic Theory"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"dept_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENEE"</span><span class="p">,</span><span class="w">
@@ -584,43 +899,68 @@ Trimmed Response:</p>
     </span><span class="s2">"ENEE380-0103"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="get_courses">
+            <div class="post-description">
+              <h2>Get courses</h2>
+              <p>Get information about one or more courses.</p>
 
-<section class="post" id="get_courses">
-  <div class="post-description">
-    <h2>Get courses</h2>
-    <p>Get information about one or more courses.</p>
+              <hr />
 
-<hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/&lt;course_id&gt;</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/&lt;course_id&gt;</code></p>
+              <p>Get information about one course.</p>
 
-<p>Get information about one course.</p>
+              <p>
+                <em>Returns:</em> The
+                <a href="#course_object">course object</a> specified, or a 404
+                error, letting you know that the course doesn’t exist on the
+                database.
+              </p>
 
-<p><em>Returns:</em> The <a href="#course_object">course object</a> specified, or a 404 error, letting you know that the course doesn’t exist on the database.</p>
+              <hr />
 
-<hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/&lt;course_ids&gt;</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/&lt;course_ids&gt;</code></p>
+              <p>
+                Get information about multiple courses where
+                <code class="highlighter-rouge">course_ids</code> is a
+                comma-seperated list of
+                <code class="highlighter-rouge">course_id</code>’s.
+              </p>
 
-<p>Get information about multiple courses where <code class="highlighter-rouge">course_ids</code> is a comma-seperated list of <code class="highlighter-rouge">course_id</code>’s.</p>
+              <p>
+                <em>Returns:</em> Array of
+                <a href="#course_object">course objects</a>. If one of the
+                course objects does not exist, the rest are still returned.
+              </p>
 
-<p><em>Returns:</em> Array of <a href="#course_object">course objects</a>. If one of the course objects does not exist, the rest are still returned.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/courses/ENES100</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/courses/ENES100</code></p>
+              <p>Response:</p>
 
-<p>Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nl">"course_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENES100"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Introduction to Engineering Design"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"dept_id"</span><span class="p">:</span><span class="s2">"ENES"</span><span class="p">,</span><span class="w">
@@ -648,39 +988,64 @@ Trimmed Response:</p>
     </span><span class="s2">"ENES100-0801"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>Get information about one or more courses.</p>
 
-  </div>
-  <div class="post-example">
-    <p>Get information about one or more courses.</p>
+              <hr />
 
-<hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/&lt;course_id&gt;</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/&lt;course_id&gt;</code></p>
+              <p>Get information about one course.</p>
 
-<p>Get information about one course.</p>
+              <p>
+                <em>Returns:</em> The
+                <a href="#course_object">course object</a> specified, or a 404
+                error, letting you know that the course doesn’t exist on the
+                database.
+              </p>
 
-<p><em>Returns:</em> The <a href="#course_object">course object</a> specified, or a 404 error, letting you know that the course doesn’t exist on the database.</p>
+              <hr />
 
-<hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/&lt;course_ids&gt;</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/&lt;course_ids&gt;</code></p>
+              <p>
+                Get information about multiple courses where
+                <code class="highlighter-rouge">course_ids</code> is a
+                comma-seperated list of
+                <code class="highlighter-rouge">course_id</code>’s.
+              </p>
 
-<p>Get information about multiple courses where <code class="highlighter-rouge">course_ids</code> is a comma-seperated list of <code class="highlighter-rouge">course_id</code>’s.</p>
+              <p>
+                <em>Returns:</em> Array of
+                <a href="#course_object">course objects</a>. If one of the
+                course objects does not exist, the rest are still returned.
+              </p>
 
-<p><em>Returns:</em> Array of <a href="#course_object">course objects</a>. If one of the course objects does not exist, the rest are still returned.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/courses/ENES100</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/courses/ENES100</code></p>
+              <p>Response:</p>
 
-<p>Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nl">"course_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENES100"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Introduction to Engineering Design"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"dept_id"</span><span class="p">:</span><span class="s2">"ENES"</span><span class="p">,</span><span class="w">
@@ -708,81 +1073,151 @@ Trimmed Response:</p>
     </span><span class="s2">"ENES100-0801"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="sections">
+            <div class="post-description">
+              <h2>Sections</h2>
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/sections</code
+                >
+              </p>
 
-<section class="post" id="sections">
-  <div class="post-description">
-    <h2>Sections</h2>
-    <p><code class="highlighter-rouge">https://api.umd.io/v0/courses/sections</code></p>
+              <p>
+                <em>Returns:</em> a <a href="./#pagination">Paginated</a> array
+                of <a href="#section_object">Section objects</a>.
+              </p>
 
-<p><em>Returns:</em> a <a href="/#pagination">Paginated</a> array of <a href="#section_object">Section objects</a>.</p>
+              <hr />
 
-<hr />
+              <p>
+                Example search query:
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/sections?start_time&gt;=12pm</code
+                >
+                gets all sections that start after 12pm.
+              </p>
 
-<p>Example search query: <code class="highlighter-rouge">https://api.umd.io/v0/courses/sections?start_time&gt;=12pm</code> gets all sections that start after 12pm.</p>
+              <p>
+                <em
+                  >See <a href="./#course_object">Searching courses</a> for more
+                  information about searches.</em
+                >
+              </p>
 
-<p><em>See <a href="/#course_object">Searching courses</a> for more information about searches.</em></p>
+              <!-- EXAMPLE -->
+              <p>
+                <strong>Sections Root URL:</strong>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/sections</code
+                >
+              </p>
 
-<!-- EXAMPLE -->
-<p><strong>Sections Root URL:</strong>
-<code class="highlighter-rouge">https://api.umd.io/v0/courses/sections</code></p>
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/sections</code
+                >
+              </p>
 
-<!-- END -->
+              <p>
+                <em>Returns:</em> a <a href="./#pagination">Paginated</a> array
+                of <a href="#section_object">Section objects</a>.
+              </p>
 
-  </div>
-  <div class="post-example">
-    <p><code class="highlighter-rouge">https://api.umd.io/v0/courses/sections</code></p>
+              <hr />
 
-<p><em>Returns:</em> a <a href="/#pagination">Paginated</a> array of <a href="#section_object">Section objects</a>.</p>
+              <p>
+                Example search query:
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/sections?start_time&gt;=12pm</code
+                >
+                gets all sections that start after 12pm.
+              </p>
 
-<hr />
+              <p>
+                <em
+                  >See <a href="./#course_object">Searching courses</a> for more
+                  information about searches.</em
+                >
+              </p>
 
-<p>Example search query: <code class="highlighter-rouge">https://api.umd.io/v0/courses/sections?start_time&gt;=12pm</code> gets all sections that start after 12pm.</p>
+              <!-- EXAMPLE -->
+              <p>
+                <strong>Sections Root URL:</strong>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/sections</code
+                >
+              </p>
 
-<p><em>See <a href="/#course_object">Searching courses</a> for more information about searches.</em></p>
+              <!-- END -->
+            </div>
+          </section>
 
-<!-- EXAMPLE -->
-<p><strong>Sections Root URL:</strong>
-<code class="highlighter-rouge">https://api.umd.io/v0/courses/sections</code></p>
+          <section class="post" id="section_object">
+            <div class="post-description">
+              <h2>Section object</h2>
+              <p>
+                The section object represents a single section of a course. The
+                properties of a section are:
+              </p>
 
-<!-- END -->
+              <p>
+                <code class="highlighter-rouge">section_id</code> – a unique
+                section identifier, like <em>ENES100-0101</em>. Always the
+                related <code class="highlighter-rouge">course_id</code> with a
+                four-digit section number appended to it.
+              </p>
 
-  </div>
-</section>
+              <p>
+                <code class="highlighter-rouge">course_id</code> – The course
+                that the section belongs to.
+              </p>
 
-<section class="post" id="section_object">
-  <div class="post-description">
-    <h2>Section object</h2>
-    <p>The section object represents a single section of a course. The properties of a section are:</p>
+              <p>
+                <code class="highlighter-rouge">instructors</code> – An Array of
+                names of the instructors for this section.
+              </p>
 
-<p><code class="highlighter-rouge">section_id</code> – a unique section identifier, like <em>ENES100-0101</em>. Always the related <code class="highlighter-rouge">course_id</code> with a four-digit section number appended to it.</p>
+              <p>
+                <code class="highlighter-rouge">seats</code> – The total number
+                of seats offered in a section.
+              </p>
 
-<p><code class="highlighter-rouge">course_id</code> – The course that the section belongs to.</p>
+              <p>
+                <code class="highlighter-rouge">semester</code> – Six-digit
+                number specifying the semester a course is offered.
+              </p>
 
-<p><code class="highlighter-rouge">instructors</code> – An Array of names of the instructors for this section.</p>
+              <p>
+                <code class="highlighter-rouge">meetings</code> – Array of JSON
+                objects with the following properties:
+                <code class="highlighter-rouge">days</code>: string of days for
+                that meeting, like <em>“MWF”, “TuTh”</em>.
+                <code class="highlighter-rouge">start_time</code>: start time of
+                the meeting, like <em>“9:00am”</em>.
+                <code class="highlighter-rouge">end_time</code>: end time of the
+                meeting. <code class="highlighter-rouge">building</code>:
+                building where the meeting takes place, like <em>“KEY”</em>.
+                <code class="highlighter-rouge">room</code>: Four digit room
+                code where the meeting takes place.
+                <code class="highlighter-rouge">classtype</code>: String
+                indicates what type of meeting. Could be <em>“Lecture”</em>,
+                <em>“Discussion”</em>, or <em>“Lab”</em>.
+              </p>
 
-<p><code class="highlighter-rouge">seats</code> – The total number of seats offered in a section.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample section object</strong></p>
 
-<p><code class="highlighter-rouge">semester</code> – Six-digit number specifying the semester a course is offered.</p>
-
-<p><code class="highlighter-rouge">meetings</code> – Array of JSON objects with the following properties: 
-  <code class="highlighter-rouge">days</code>: string of days for that meeting, like <em>“MWF”, “TuTh”</em>.
-  <code class="highlighter-rouge">start_time</code>: start time of the meeting, like <em>“9:00am”</em>.
-  <code class="highlighter-rouge">end_time</code>: end time of the meeting.
-  <code class="highlighter-rouge">building</code>: building where the meeting takes place, like <em>“KEY”</em>.
-  <code class="highlighter-rouge">room</code>: Four digit room code where the meeting takes place.
-  <code class="highlighter-rouge">classtype</code>: String indicates what type of meeting. Could be <em>“Lecture”</em>, <em>“Discussion”</em>, or <em>“Lab”</em>.</p>
-
-<!-- EXAMPLE -->
-<p><strong>Sample section object</strong></p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nl">"section_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENGL101-0101"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"course_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENGL101"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"instructors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -801,37 +1236,65 @@ Trimmed Response:</p>
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>
+                The section object represents a single section of a course. The
+                properties of a section are:
+              </p>
 
-  </div>
-  <div class="post-example">
-    <p>The section object represents a single section of a course. The properties of a section are:</p>
+              <p>
+                <code class="highlighter-rouge">section_id</code> – a unique
+                section identifier, like <em>ENES100-0101</em>. Always the
+                related <code class="highlighter-rouge">course_id</code> with a
+                four-digit section number appended to it.
+              </p>
 
-<p><code class="highlighter-rouge">section_id</code> – a unique section identifier, like <em>ENES100-0101</em>. Always the related <code class="highlighter-rouge">course_id</code> with a four-digit section number appended to it.</p>
+              <p>
+                <code class="highlighter-rouge">course_id</code> – The course
+                that the section belongs to.
+              </p>
 
-<p><code class="highlighter-rouge">course_id</code> – The course that the section belongs to.</p>
+              <p>
+                <code class="highlighter-rouge">instructors</code> – An Array of
+                names of the instructors for this section.
+              </p>
 
-<p><code class="highlighter-rouge">instructors</code> – An Array of names of the instructors for this section.</p>
+              <p>
+                <code class="highlighter-rouge">seats</code> – The total number
+                of seats offered in a section.
+              </p>
 
-<p><code class="highlighter-rouge">seats</code> – The total number of seats offered in a section.</p>
+              <p>
+                <code class="highlighter-rouge">semester</code> – Six-digit
+                number specifying the semester a course is offered.
+              </p>
 
-<p><code class="highlighter-rouge">semester</code> – Six-digit number specifying the semester a course is offered.</p>
+              <p>
+                <code class="highlighter-rouge">meetings</code> – Array of JSON
+                objects with the following properties:
+                <code class="highlighter-rouge">days</code>: string of days for
+                that meeting, like <em>“MWF”, “TuTh”</em>.
+                <code class="highlighter-rouge">start_time</code>: start time of
+                the meeting, like <em>“9:00am”</em>.
+                <code class="highlighter-rouge">end_time</code>: end time of the
+                meeting. <code class="highlighter-rouge">building</code>:
+                building where the meeting takes place, like <em>“KEY”</em>.
+                <code class="highlighter-rouge">room</code>: Four digit room
+                code where the meeting takes place.
+                <code class="highlighter-rouge">classtype</code>: String
+                indicates what type of meeting. Could be <em>“Lecture”</em>,
+                <em>“Discussion”</em>, or <em>“Lab”</em>.
+              </p>
 
-<p><code class="highlighter-rouge">meetings</code> – Array of JSON objects with the following properties: 
-  <code class="highlighter-rouge">days</code>: string of days for that meeting, like <em>“MWF”, “TuTh”</em>.
-  <code class="highlighter-rouge">start_time</code>: start time of the meeting, like <em>“9:00am”</em>.
-  <code class="highlighter-rouge">end_time</code>: end time of the meeting.
-  <code class="highlighter-rouge">building</code>: building where the meeting takes place, like <em>“KEY”</em>.
-  <code class="highlighter-rouge">room</code>: Four digit room code where the meeting takes place.
-  <code class="highlighter-rouge">classtype</code>: String indicates what type of meeting. Could be <em>“Lecture”</em>, <em>“Discussion”</em>, or <em>“Lab”</em>.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample section object</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample section object</strong></p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nl">"section_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENGL101-0101"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"course_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENGL101"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"instructors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -850,78 +1313,129 @@ Trimmed Response:</p>
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="get_sections">
+            <div class="post-description">
+              <h2>Get sections</h2>
+              <p>Get information about a section or multiple sections.</p>
 
-<section class="post" id="get_sections">
-  <div class="post-description">
-    <h2>Get sections</h2>
-    <p>Get information about a section or multiple sections.</p>
+              <hr />
 
-<hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/sections/&lt;section_id&gt;</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/sections/&lt;section_id&gt;</code></p>
+              <p>
+                To get information about a single section, append the
+                <code class="highlighter-rouge">section_id</code> to the
+                sections root URL.
+              </p>
 
-<p>To get information about a single section, append the <code class="highlighter-rouge">section_id</code> to the sections root URL.</p>
+              <p>
+                <em>Returns</em>: The specified
+                <a href="#section_object">section object</a> or
+                <code class="highlighter-rouge">null</code>
+              </p>
 
-<p><em>Returns</em>: The specified <a href="#section_object">section object</a> or <code class="highlighter-rouge">null</code></p>
+              <hr />
 
-<hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/sections/&lt;section_ids&gt;</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/sections/&lt;section_ids&gt;</code></p>
+              <p>
+                To get information about multiple sections, append
+                comma-separated
+                <code class="highlighter-rouge">section_id</code>s to the
+                sections root URL.
+              </p>
 
-<p>To get information about multiple sections, append comma-separated <code class="highlighter-rouge">section_id</code>s to the sections root URL.</p>
+              <p>
+                <em>Returns</em>: Array of specified
+                <a href="#section_object">section objects</a>. If one of the
+                sections does not exist, the rest are still returned.
+              </p>
 
-<p><em>Returns</em>: Array of specified <a href="#section_object">section objects</a>. If one of the sections does not exist, the rest are still returned.</p>
+              <!-- EXAMPLE -->
 
-<!-- EXAMPLE -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>Get information about a section or multiple sections.</p>
 
-<!-- END -->
+              <hr />
 
-  </div>
-  <div class="post-example">
-    <p>Get information about a section or multiple sections.</p>
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/sections/&lt;section_id&gt;</code
+                >
+              </p>
 
-<hr />
+              <p>
+                To get information about a single section, append the
+                <code class="highlighter-rouge">section_id</code> to the
+                sections root URL.
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/sections/&lt;section_id&gt;</code></p>
+              <p>
+                <em>Returns</em>: The specified
+                <a href="#section_object">section object</a> or
+                <code class="highlighter-rouge">null</code>
+              </p>
 
-<p>To get information about a single section, append the <code class="highlighter-rouge">section_id</code> to the sections root URL.</p>
+              <hr />
 
-<p><em>Returns</em>: The specified <a href="#section_object">section object</a> or <code class="highlighter-rouge">null</code></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/sections/&lt;section_ids&gt;</code
+                >
+              </p>
 
-<hr />
+              <p>
+                To get information about multiple sections, append
+                comma-separated
+                <code class="highlighter-rouge">section_id</code>s to the
+                sections root URL.
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/sections/&lt;section_ids&gt;</code></p>
+              <p>
+                <em>Returns</em>: Array of specified
+                <a href="#section_object">section objects</a>. If one of the
+                sections does not exist, the rest are still returned.
+              </p>
 
-<p>To get information about multiple sections, append comma-separated <code class="highlighter-rouge">section_id</code>s to the sections root URL.</p>
+              <!-- EXAMPLE -->
 
-<p><em>Returns</em>: Array of specified <a href="#section_object">section objects</a>. If one of the sections does not exist, the rest are still returned.</p>
+              <!-- END -->
+            </div>
+          </section>
 
-<!-- EXAMPLE -->
+          <section class="post" id="get_departments">
+            <div class="post-description">
+              <h2>Get departments</h2>
+              <p>Get a list of all department ids.</p>
 
-<!-- END -->
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/departments</code
+                >
+              </p>
 
-  </div>
-</section>
+              <!-- EXAMPLE -->
 
-<section class="post" id="get_departments">
-  <div class="post-description">
-    <h2>Get departments</h2>
-    <p>Get a list of all department ids.</p>
+              <p><em>Trimmed sample response:</em></p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/departments</code></p>
-
-<!-- EXAMPLE -->
-
-<p><em>Trimmed sample response:</em></p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="s2">"AASP"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"AAST"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"AGNR"</span><span class="p">,</span><span class="w">
@@ -930,22 +1444,25 @@ Trimmed Response:</p>
   </span><span class="err">...</span><span class="w">
   </span><span class="s2">"WMST"</span><span class="w">
 </span><span class="p">]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>Get a list of all department ids.</p>
 
-  </div>
-  <div class="post-example">
-    <p>Get a list of all department ids.</p>
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/departments</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/departments</code></p>
+              <!-- EXAMPLE -->
 
-<!-- EXAMPLE -->
+              <p><em>Trimmed sample response:</em></p>
 
-<p><em>Trimmed sample response:</em></p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="s2">"AASP"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"AAST"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"AGNR"</span><span class="p">,</span><span class="w">
@@ -954,23 +1471,22 @@ Trimmed Response:</p>
   </span><span class="err">...</span><span class="w">
   </span><span class="s2">"WMST"</span><span class="w">
 </span><span class="p">]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
-
-  </div>
-</section>
+              <!-- END -->
+            </div>
+          </section>
 
           <footer>
-  <div class="footer-text">
-  made with love, by students, for students. <br>
-  get in touch if you want help, or if you want to help. <br><br>
-  <a href="mailto:hi@umd.io">email</a> &nbsp;&nbsp;
-  <a href="http://github.com/umdio">github</a> &nbsp;&nbsp;
-  © umdio 2015-2019
-  </div>
-</footer>
-
+            <div class="footer-text">
+              made with love, by students, for students. <br />
+              get in touch if you want help, or if you want to help.
+              <br /><br />
+              <a href="mailto:hi@umd.io">email</a> &nbsp;&nbsp;
+              <a href="http://github.com/umdio">github</a> &nbsp;&nbsp; © umdio
+              2015-2019
+            </div>
+          </footer>
         </div>
       </div>
     </div>

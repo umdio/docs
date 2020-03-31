@@ -1,292 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-  <meta name="MobileOptimized" content="width">
-  <meta name="HandheldFriendly" content="true">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Bus | umd.io</title>
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <meta name="description" content="An API for the University of Maryland.
-">
-  <link rel="stylesheet" href="/css/main.css?v=1.1">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet"> 
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/default.min.css">
-  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/api.js"></script>
-</head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Bus | umd.io</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta
+      name="description"
+      content="An API for the University of Maryland.
+"
+    />
+    <link rel="stylesheet" href="./css/main.css?v=1.1" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href=".//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/default.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/api.js"></script>
+  </head>
 
   <body>
     <div class="header">
       <div id="btn" class="btn">
-        <div class='btn-top'></div>
-        <div class='btn-middle'></div>
-        <div class='btn-bottom'></div>
+        <div class="btn-top"></div>
+        <div class="btn-middle"></div>
+        <div class="btn-bottom"></div>
       </div>
       <header>
-  <a href="https://umd.io">
-    <div class="logo">
-      <img src="/images/umdio-logo@2x.png" alt="umd.io" />
-    </div>
-  </a>
-</header>
-
+        <a href="https://umd.io">
+          <div class="logo">
+            <img src="/images/umdio-logo@2x.png" alt="umd.io" />
+          </div>
+        </a>
+      </header>
     </div>
     <div class="container">
       <div class="content">
         <div class="sidebar" id="sidebar">
           <div class="menu">
             <div id="menu" class="menu-wrapper">
-  <nav>
-    <p class="ref-title">API</p>
-    
-    
-    
-    <ul class="ref-section">
-      <li><a class="menu-item" href="/#intro">Introduction</a></li>
-    
-    <li><a class="menu-item" href="/#versions">Versioning</a></li>
-    
-    <li><a class="menu-item" href="/#pagination">Pagination</a></li>
-    
-    <li><a class="menu-item" href="/#expanding_objects">Expanding objects</a></li>
-    
-    <li><a class="menu-item" href="/#errors">Errors</a></li>
-    
-    <li><a class="menu-item" href="/#tips-tricks">Tips and Tricks</a></li>
-    
-    <li><a class="menu-item" href="/#terms">Terms of Use</a></li>
-    
-    </ul>
-    <p class="ref-title">ENDPOINTS</p>
-    <ul class="ref-section">
-    
-      
-    
-      
-      
-      
-      <li class="ref-endpoint active">
-        <a class="ref-subsection" href="/bus/">Bus</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="#list_routes">List routes</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#route_object">The route object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#get_routes">Get routes</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#stop_object">Stop object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#stops">List stops</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#get_stops">Get stops</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#locations">Get bus locations</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#route_locations">Locate buses on a route</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#arrivals">Get predicted arrivals</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="#route_schedules">Get route schedules</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/courses/">Courses</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#search">Searching courses</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#list_courses">List all courses</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#course_object">The course object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#get_courses">Get courses</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#sections">Sections</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#section_object">Section object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#get_sections">Get sections</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#get_departments">Get departments</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-    
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/majors/">Majors</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/majors/#majors">The major object</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/map/">Map</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/map/#building_object">The building object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/map/#list_buildings">List buildings</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/map/#get_buildings">Get buildings</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/professors/">Professors</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/professors/#search">Searching professors</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/professors/#professor_object">The professor object</a></li>
-        
-        </ul>
-      </li>
-      
-    
-    </ul>
-  </nav>
-</div>
+              <nav>
+                <p class="ref-title">API</p>
 
+                <ul class="ref-section">
+                  <li><a class="menu-item" href="./#intro">Introduction</a></li>
+
+                  <li>
+                    <a class="menu-item" href="./#versions">Versioning</a>
+                  </li>
+
+                  <li>
+                    <a class="menu-item" href="./#pagination">Pagination</a>
+                  </li>
+
+                  <li>
+                    <a class="menu-item" href="./#expanding_objects"
+                      >Expanding objects</a
+                    >
+                  </li>
+
+                  <li><a class="menu-item" href="./#errors">Errors</a></li>
+
+                  <li>
+                    <a class="menu-item" href="./#tips-tricks"
+                      >Tips and Tricks</a
+                    >
+                  </li>
+
+                  <li><a class="menu-item" href="./#terms">Terms of Use</a></li>
+                </ul>
+                <p class="ref-title">ENDPOINTS</p>
+                <ul class="ref-section">
+                  <li class="ref-endpoint active">
+                    <a class="ref-subsection" href="./bus/">Bus</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="#list_routes">List routes</a>
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#route_object"
+                          >The route object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#get_routes">Get routes</a>
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#stop_object">Stop object</a>
+                      </li>
+
+                      <li><a class="menu-item" href="#stops">List stops</a></li>
+
+                      <li>
+                        <a class="menu-item" href="#get_stops">Get stops</a>
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#locations"
+                          >Get bus locations</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#route_locations"
+                          >Locate buses on a route</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#arrivals"
+                          >Get predicted arrivals</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="#route_schedules"
+                          >Get route schedules</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./courses/">Courses</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./courses/#search"
+                          >Searching courses</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#list_courses"
+                          >List all courses</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#course_object"
+                          >The course object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#get_courses"
+                          >Get courses</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#sections"
+                          >Sections</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#section_object"
+                          >Section object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#get_sections"
+                          >Get sections</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#get_departments"
+                          >Get departments</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./majors/">Majors</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./majors/#majors"
+                          >The major object</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./map/">Map</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./map/#building_object"
+                          >The building object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./map/#list_buildings"
+                          >List buildings</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./map/#get_buildings"
+                          >Get buildings</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./professors/"
+                      >Professors</a
+                    >
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./professors/#search"
+                          >Searching professors</a
+                        >
+                      </li>
+
+                      <li>
+                        <a
+                          class="menu-item"
+                          href="./professors/#professor_object"
+                          >The professor object</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
         <div class="docs">
           <section class="post">
-  <div class="post-description">
-    <h1>Bus</h1>
-    <p>This endpoint lets you get data about bus routes, schedules, stops, locations, and predicted arrival times. The data is provided by <a href="http://www.dots.umd.edu/nextbus.html">NextBus</a>, which monitors buses and gives the data to us via their <a href="http://webservices.nextbus.com/service/publicJSONFeed?a=umd">API</a>. We think our API is easier to use, but our data might be behind NextBus by a few seconds. If your app requires to-the-second bus location info, you can go right to the source.</p>
+            <div class="post-description">
+              <h1>Bus</h1>
+              <p>
+                This endpoint lets you get data about bus routes, schedules,
+                stops, locations, and predicted arrival times. The data is
+                provided by
+                <a href="http://www.dots.umd.edu/nextbus.html">NextBus</a>,
+                which monitors buses and gives the data to us via their
+                <a
+                  href="http://webservices.nextbus.com/service/publicJSONFeed?a=umd"
+                  >API</a
+                >. We think our API is easier to use, but our data might be
+                behind NextBus by a few seconds. If your app requires
+                to-the-second bus location info, you can go right to the source.
+              </p>
 
-<p>All bus data is copyright University of Maryland 2015.</p>
+              <p>All bus data is copyright University of Maryland 2015.</p>
 
-<!-- EXAMPLE -->
+              <!-- EXAMPLE -->
 
-<h3 id="bus-endpoint">Bus Endpoint</h3>
+              <h3 id="bus-endpoint">Bus Endpoint</h3>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/bus</code></p>
+              <p>
+                <code class="highlighter-rouge">https://api.umd.io/v0/bus</code>
+              </p>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>
+                This endpoint lets you get data about bus routes, schedules,
+                stops, locations, and predicted arrival times. The data is
+                provided by
+                <a href="http://www.dots.umd.edu/nextbus.html">NextBus</a>,
+                which monitors buses and gives the data to us via their
+                <a
+                  href="http://webservices.nextbus.com/service/publicJSONFeed?a=umd"
+                  >API</a
+                >. We think our API is easier to use, but our data might be
+                behind NextBus by a few seconds. If your app requires
+                to-the-second bus location info, you can go right to the source.
+              </p>
 
-  </div>
-  <div class="post-example">
-    <p>This endpoint lets you get data about bus routes, schedules, stops, locations, and predicted arrival times. The data is provided by <a href="http://www.dots.umd.edu/nextbus.html">NextBus</a>, which monitors buses and gives the data to us via their <a href="http://webservices.nextbus.com/service/publicJSONFeed?a=umd">API</a>. We think our API is easier to use, but our data might be behind NextBus by a few seconds. If your app requires to-the-second bus location info, you can go right to the source.</p>
+              <p>All bus data is copyright University of Maryland 2015.</p>
 
-<p>All bus data is copyright University of Maryland 2015.</p>
+              <!-- EXAMPLE -->
 
-<!-- EXAMPLE -->
+              <h3 id="bus-endpoint">Bus Endpoint</h3>
 
-<h3 id="bus-endpoint">Bus Endpoint</h3>
+              <p>
+                <code class="highlighter-rouge">https://api.umd.io/v0/bus</code>
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/bus</code></p>
+              <!-- END -->
+            </div>
+          </section>
+          <!-- PAGE CAT = bus -->
 
-<!-- END -->
+          <section class="post" id="list_routes">
+            <div class="post-description">
+              <h2>List routes</h2>
+              <p>
+                List all the bus routes. Returns the route ids and the names of
+                the routes.
+              </p>
 
-  </div>
-</section>
-<!-- PAGE CAT = bus --> 
+              <hr />
 
-<section class="post" id="list_routes">
-  <div class="post-description">
-    <h2>List routes</h2>
-    <p>List all the bus routes. Returns the route ids and the names of the routes.</p>
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/routes</code
+                >
+              </p>
 
-<hr />
+              <p>
+                <em>Returns</em>: Array of the bus routes as JSON Objects with
+                ‘route_id’ and ‘title’ fields.
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/bus/routes</code></p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<p><em>Returns</em>: Array of the bus routes as JSON Objects with ‘route_id’ and ‘title’ fields.</p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/routes</code
+                >
+              </p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>Trimmed Response:</p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/routes</code></p>
-
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"route_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"109"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"109 River Road"</span><span class="w">
@@ -300,29 +364,42 @@
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"115 Orange"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>
+                List all the bus routes. Returns the route ids and the names of
+                the routes.
+              </p>
 
-  </div>
-  <div class="post-example">
-    <p>List all the bus routes. Returns the route ids and the names of the routes.</p>
+              <hr />
 
-<hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/routes</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/bus/routes</code></p>
+              <p>
+                <em>Returns</em>: Array of the bus routes as JSON Objects with
+                ‘route_id’ and ‘title’ fields.
+              </p>
 
-<p><em>Returns</em>: Array of the bus routes as JSON Objects with ‘route_id’ and ‘title’ fields.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/routes</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/routes</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"route_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"109"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"109 River Road"</span><span class="w">
@@ -336,45 +413,98 @@
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"115 Orange"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="route_object">
+            <div class="post-description">
+              <h2>The route object</h2>
+              <p>
+                The route object represents a bus route. The properties of a
+                route are:
+              </p>
 
-<section class="post" id="route_object">
-  <div class="post-description">
-    <h2>The route object</h2>
-    <p>The route object represents a bus route. The properties of a route are:</p>
+              <p>
+                <code class="highlighter-rouge">route_id</code> – a unique three
+                digit route number. Examples: <em>“115”, “701”</em>.
+              </p>
 
-<p><code class="highlighter-rouge">route_id</code> – a unique three digit route number. Examples: <em>“115”, “701”</em>.</p>
+              <p>
+                <code class="highlighter-rouge">title</code> – string name of
+                the route. Examples: <em>“115 Orange”, “701 UMB BioPark”</em>
+              </p>
 
-<p><code class="highlighter-rouge">title</code> – string name of the route. Examples: <em>“115 Orange”, “701 UMB BioPark”</em></p>
+              <p>
+                <code class="highlighter-rouge">stops</code> – Array of bus
+                stops on a route. Stops have a unique string
+                <code class="highlighter-rouge">stop_id</code>, a full
+                <code class="highlighter-rouge">title</code>, and
+                <code class="highlighter-rouge">lon</code> (longitude) and
+                <code class="highlighter-rouge">lat</code> (latitude)
+                coordinates. Routes have a lot of stops, so this might look a
+                little messy.
+              </p>
 
-<p><code class="highlighter-rouge">stops</code> – Array of bus stops on a route. Stops have a unique string <code class="highlighter-rouge">stop_id</code>, a full <code class="highlighter-rouge">title</code>, and <code class="highlighter-rouge">lon</code> (longitude) and <code class="highlighter-rouge">lat</code> (latitude) coordinates. Routes have a lot of stops, so this might look a little messy.</p>
+              <p>
+                <code class="highlighter-rouge">directions</code> – Array of
+                directions the bus travels. A direction has a unique string
+                <code class="highlighter-rouge">direction_id</code>, a
+                <code class="highlighter-rouge">title</code>, and an array of
+                <code class="highlighter-rouge">stops</code> specifying the
+                stops along the route in that direction. Many buses only have
+                one direction, ‘loop’ , which has all stops on the route.
+                Otherwise, there are usually two directions, mostly named for
+                the final stop in that direction.
+              </p>
 
-<p><code class="highlighter-rouge">directions</code> – Array of directions the bus travels. A direction has a unique string <code class="highlighter-rouge">direction_id</code>, a <code class="highlighter-rouge">title</code>, and an array of <code class="highlighter-rouge">stops</code> specifying the stops along the route in that direction. Many buses only have one direction, ‘loop’ , which has all stops on the route. Otherwise, there are usually two directions, mostly named for the final stop in that direction.</p>
+              <p>
+                <code class="highlighter-rouge">paths</code> – When you want to
+                draw the route on the map, you use the <em>paths</em>. These are
+                several arrays (an array of arrays) of latitude and longitude
+                coordinates (points). According to NextBus, connect the points
+                in array separately, and you will end up with a nice outline of
+                the route. Don’t try to connect the points between the arrays of
+                points, because they won’t match up. There are a lot of points
+                (a few hundred) for each route.
+              </p>
 
-<p><code class="highlighter-rouge">paths</code> – When you want to draw the route on the map, you use the <em>paths</em>. These are several arrays (an array of arrays) of latitude and longitude coordinates (points). According to NextBus, connect the points in array separately, and you will end up with a nice outline of the route. Don’t try to connect the points between the arrays of points, because they won’t match up. There are a lot of points (a few hundred) for each route.</p>
+              <p>
+                The next four are useful if you are trying to fit the route in a
+                map window.
+              </p>
 
-<p>The next four are useful if you are trying to fit the route in a map window.</p>
+              <p>
+                <code class="highlighter-rouge">lat_max</code> – Maximum
+                latitude of the bus route.
+              </p>
 
-<p><code class="highlighter-rouge">lat_max</code> – Maximum latitude of the bus route.</p>
+              <p>
+                <code class="highlighter-rouge">lat_min</code> – Minimum
+                latitude of the bus route.
+              </p>
 
-<p><code class="highlighter-rouge">lat_min</code> – Minimum latitude of the bus route.</p>
+              <p>
+                <code class="highlighter-rouge">lon_max</code> – Maximum
+                longitude of the bus route.
+              </p>
 
-<p><code class="highlighter-rouge">lon_max</code> – Maximum longitude of the bus route.</p>
+              <p>
+                <code class="highlighter-rouge">lon_min</code> – Minimum
+                longitude of the bus route.
+              </p>
 
-<p><code class="highlighter-rouge">lon_min</code> – Minimum longitude of the bus route.</p>
+              <!-- EXAMPLE -->
+              <p>
+                <strong>Sample route object</strong> (trimmed for space - there
+                are more stops and path data)
+              </p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample route object</strong>
-(trimmed for space - there are more stops and path data)</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="nl">"route_id"</span><span class="p">:</span><span class="s2">"115"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"115 Orange"</span><span class="p">,</span><span class="w">  
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="nl">"route_id"</span><span class="p">:</span><span class="s2">"115"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"115 Orange"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"stops"</span><span class="p">:</span><span class="w">
   </span><span class="p">[</span><span class="w">
 
@@ -423,41 +553,94 @@
   </span><span class="nl">"lon_max"</span><span class="p">:</span><span class="s2">"-76.9370967"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"lon_min"</span><span class="p">:</span><span class="s2">"-76.949374"</span><span class="w">
   </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>
+                The route object represents a bus route. The properties of a
+                route are:
+              </p>
 
-  </div>
-  <div class="post-example">
-    <p>The route object represents a bus route. The properties of a route are:</p>
+              <p>
+                <code class="highlighter-rouge">route_id</code> – a unique three
+                digit route number. Examples: <em>“115”, “701”</em>.
+              </p>
 
-<p><code class="highlighter-rouge">route_id</code> – a unique three digit route number. Examples: <em>“115”, “701”</em>.</p>
+              <p>
+                <code class="highlighter-rouge">title</code> – string name of
+                the route. Examples: <em>“115 Orange”, “701 UMB BioPark”</em>
+              </p>
 
-<p><code class="highlighter-rouge">title</code> – string name of the route. Examples: <em>“115 Orange”, “701 UMB BioPark”</em></p>
+              <p>
+                <code class="highlighter-rouge">stops</code> – Array of bus
+                stops on a route. Stops have a unique string
+                <code class="highlighter-rouge">stop_id</code>, a full
+                <code class="highlighter-rouge">title</code>, and
+                <code class="highlighter-rouge">lon</code> (longitude) and
+                <code class="highlighter-rouge">lat</code> (latitude)
+                coordinates. Routes have a lot of stops, so this might look a
+                little messy.
+              </p>
 
-<p><code class="highlighter-rouge">stops</code> – Array of bus stops on a route. Stops have a unique string <code class="highlighter-rouge">stop_id</code>, a full <code class="highlighter-rouge">title</code>, and <code class="highlighter-rouge">lon</code> (longitude) and <code class="highlighter-rouge">lat</code> (latitude) coordinates. Routes have a lot of stops, so this might look a little messy.</p>
+              <p>
+                <code class="highlighter-rouge">directions</code> – Array of
+                directions the bus travels. A direction has a unique string
+                <code class="highlighter-rouge">direction_id</code>, a
+                <code class="highlighter-rouge">title</code>, and an array of
+                <code class="highlighter-rouge">stops</code> specifying the
+                stops along the route in that direction. Many buses only have
+                one direction, ‘loop’ , which has all stops on the route.
+                Otherwise, there are usually two directions, mostly named for
+                the final stop in that direction.
+              </p>
 
-<p><code class="highlighter-rouge">directions</code> – Array of directions the bus travels. A direction has a unique string <code class="highlighter-rouge">direction_id</code>, a <code class="highlighter-rouge">title</code>, and an array of <code class="highlighter-rouge">stops</code> specifying the stops along the route in that direction. Many buses only have one direction, ‘loop’ , which has all stops on the route. Otherwise, there are usually two directions, mostly named for the final stop in that direction.</p>
+              <p>
+                <code class="highlighter-rouge">paths</code> – When you want to
+                draw the route on the map, you use the <em>paths</em>. These are
+                several arrays (an array of arrays) of latitude and longitude
+                coordinates (points). According to NextBus, connect the points
+                in array separately, and you will end up with a nice outline of
+                the route. Don’t try to connect the points between the arrays of
+                points, because they won’t match up. There are a lot of points
+                (a few hundred) for each route.
+              </p>
 
-<p><code class="highlighter-rouge">paths</code> – When you want to draw the route on the map, you use the <em>paths</em>. These are several arrays (an array of arrays) of latitude and longitude coordinates (points). According to NextBus, connect the points in array separately, and you will end up with a nice outline of the route. Don’t try to connect the points between the arrays of points, because they won’t match up. There are a lot of points (a few hundred) for each route.</p>
+              <p>
+                The next four are useful if you are trying to fit the route in a
+                map window.
+              </p>
 
-<p>The next four are useful if you are trying to fit the route in a map window.</p>
+              <p>
+                <code class="highlighter-rouge">lat_max</code> – Maximum
+                latitude of the bus route.
+              </p>
 
-<p><code class="highlighter-rouge">lat_max</code> – Maximum latitude of the bus route.</p>
+              <p>
+                <code class="highlighter-rouge">lat_min</code> – Minimum
+                latitude of the bus route.
+              </p>
 
-<p><code class="highlighter-rouge">lat_min</code> – Minimum latitude of the bus route.</p>
+              <p>
+                <code class="highlighter-rouge">lon_max</code> – Maximum
+                longitude of the bus route.
+              </p>
 
-<p><code class="highlighter-rouge">lon_max</code> – Maximum longitude of the bus route.</p>
+              <p>
+                <code class="highlighter-rouge">lon_min</code> – Minimum
+                longitude of the bus route.
+              </p>
 
-<p><code class="highlighter-rouge">lon_min</code> – Minimum longitude of the bus route.</p>
+              <!-- EXAMPLE -->
+              <p>
+                <strong>Sample route object</strong> (trimmed for space - there
+                are more stops and path data)
+              </p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample route object</strong>
-(trimmed for space - there are more stops and path data)</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="nl">"route_id"</span><span class="p">:</span><span class="s2">"115"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"115 Orange"</span><span class="p">,</span><span class="w">  
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="nl">"route_id"</span><span class="p">:</span><span class="s2">"115"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"115 Orange"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"stops"</span><span class="p">:</span><span class="w">
   </span><span class="p">[</span><span class="w">
 
@@ -506,38 +689,58 @@
   </span><span class="nl">"lon_max"</span><span class="p">:</span><span class="s2">"-76.9370967"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"lon_min"</span><span class="p">:</span><span class="s2">"-76.949374"</span><span class="w">
   </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="get_routes">
+            <div class="post-description">
+              <h2>Get routes</h2>
+              <p>Get detailed info about one or more bus routes.</p>
 
-<section class="post" id="get_routes">
-  <div class="post-description">
-    <h2>Get routes</h2>
-    <p>Get detailed info about one or more bus routes.</p>
+              <hr />
 
-<hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/routes/&lt;route_id&gt;</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/bus/routes/&lt;route_id&gt;</code></p>
+              <p>
+                <em>Returns</em>: Specified
+                <a href="#route_object">route object</a>.
+              </p>
 
-<p><em>Returns</em>: Specified <a href="#route_object">route object</a>.</p>
+              <hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/routes/&lt;route_ids&gt;</code
+                >
+              </p>
 
-<hr />
-<p><code class="highlighter-rouge">https://api.umd.io/v0/bus/routes/&lt;route_ids&gt;</code></p>
+              <p>
+                <em>Returns</em>: Specified
+                <a href="#route_object">route objects</a>, where
+                <code class="highlighter-rouge">route_ids</code> is a
+                comma-separated list of route_ids, like
+                <code class="highlighter-rouge">115,118,701</code>.
+              </p>
 
-<p><em>Returns</em>: Specified <a href="#route_object">route objects</a>, where <code class="highlighter-rouge">route_ids</code> is a comma-separated list of route_ids, like <code class="highlighter-rouge">115,118,701</code>.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/routes/115</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/routes/115</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nl">"route_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"701"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"701 UMB BioPark"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"stops"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
@@ -559,34 +762,54 @@
   </span><span class="nl">"lon_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-76.620848"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"lon_min"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-76.6320545"</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>Get detailed info about one or more bus routes.</p>
 
-  </div>
-  <div class="post-example">
-    <p>Get detailed info about one or more bus routes.</p>
+              <hr />
 
-<hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/routes/&lt;route_id&gt;</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/bus/routes/&lt;route_id&gt;</code></p>
+              <p>
+                <em>Returns</em>: Specified
+                <a href="#route_object">route object</a>.
+              </p>
 
-<p><em>Returns</em>: Specified <a href="#route_object">route object</a>.</p>
+              <hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/routes/&lt;route_ids&gt;</code
+                >
+              </p>
 
-<hr />
-<p><code class="highlighter-rouge">https://api.umd.io/v0/bus/routes/&lt;route_ids&gt;</code></p>
+              <p>
+                <em>Returns</em>: Specified
+                <a href="#route_object">route objects</a>, where
+                <code class="highlighter-rouge">route_ids</code> is a
+                comma-separated list of route_ids, like
+                <code class="highlighter-rouge">115,118,701</code>.
+              </p>
 
-<p><em>Returns</em>: Specified <a href="#route_object">route objects</a>, where <code class="highlighter-rouge">route_ids</code> is a comma-separated list of route_ids, like <code class="highlighter-rouge">115,118,701</code>.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/routes/115</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/routes/115</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nl">"route_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"701"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"701 UMB BioPark"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"stops"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
@@ -608,91 +831,127 @@
   </span><span class="nl">"lon_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-76.620848"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"lon_min"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-76.6320545"</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="stop_object">
+            <div class="post-description">
+              <h2>Stop object</h2>
+              <p>The stop object represents a bus stop.</p>
 
-<section class="post" id="stop_object">
-  <div class="post-description">
-    <h2>Stop object</h2>
-    <p>The stop object represents a bus stop.</p>
+              <p>It has</p>
 
-<p>It has</p>
+              <p>
+                <code class="highlighter-rouge">stop_id</code> – unique string
+                identifier for a stop, like ‘laplat’. NextBus came up with these
+                names, and most of the time, you can decipher what stop they
+                mean. ‘laplat’ is the Laplata Hall stop. ‘guilrowa_out’ is
+                Guilford Drive and Rowalt Drive (Outbound).
+              </p>
 
-<p><code class="highlighter-rouge">stop_id</code> – unique string identifier for a stop, like ‘laplat’. NextBus came up with these names, and most of the time, you can decipher what stop they mean. ‘laplat’ is the Laplata Hall stop. ‘guilrowa_out’ is Guilford Drive and Rowalt Drive (Outbound).</p>
+              <p>
+                <code class="highlighter-rouge">title</code> – the full name of
+                the stop.
+              </p>
 
-<p><code class="highlighter-rouge">title</code> – the full name of the stop.</p>
+              <p>
+                <code class="highlighter-rouge">lon</code> – longitude of the
+                stop
+              </p>
 
-<p><code class="highlighter-rouge">lon</code> – longitude of the stop</p>
+              <p>
+                <code class="highlighter-rouge">lat</code> – latitude of the
+                stop
+              </p>
 
-<p><code class="highlighter-rouge">lat</code> – latitude of the stop</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Object</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Object</strong></p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
   </span><span class="nl">"stop_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"laplat"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"La Plata Hall"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-76.94563"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38.9922185"</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>The stop object represents a bus stop.</p>
 
-  </div>
-  <div class="post-example">
-    <p>The stop object represents a bus stop.</p>
+              <p>It has</p>
 
-<p>It has</p>
+              <p>
+                <code class="highlighter-rouge">stop_id</code> – unique string
+                identifier for a stop, like ‘laplat’. NextBus came up with these
+                names, and most of the time, you can decipher what stop they
+                mean. ‘laplat’ is the Laplata Hall stop. ‘guilrowa_out’ is
+                Guilford Drive and Rowalt Drive (Outbound).
+              </p>
 
-<p><code class="highlighter-rouge">stop_id</code> – unique string identifier for a stop, like ‘laplat’. NextBus came up with these names, and most of the time, you can decipher what stop they mean. ‘laplat’ is the Laplata Hall stop. ‘guilrowa_out’ is Guilford Drive and Rowalt Drive (Outbound).</p>
+              <p>
+                <code class="highlighter-rouge">title</code> – the full name of
+                the stop.
+              </p>
 
-<p><code class="highlighter-rouge">title</code> – the full name of the stop.</p>
+              <p>
+                <code class="highlighter-rouge">lon</code> – longitude of the
+                stop
+              </p>
 
-<p><code class="highlighter-rouge">lon</code> – longitude of the stop</p>
+              <p>
+                <code class="highlighter-rouge">lat</code> – latitude of the
+                stop
+              </p>
 
-<p><code class="highlighter-rouge">lat</code> – latitude of the stop</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Object</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Object</strong></p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
   </span><span class="nl">"stop_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"laplat"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"La Plata Hall"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-76.94563"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38.9922185"</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="stops">
+            <div class="post-description">
+              <h2>List stops</h2>
+              <p>Get information about all the stops.</p>
 
-<section class="post" id="stops">
-  <div class="post-description">
-    <h2>List stops</h2>
-    <p>Get information about all the stops.</p>
+              <p>
+                Endpoint:
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/stops</code
+                >
+              </p>
 
-<p>Endpoint: <code class="highlighter-rouge">https://api.umd.io/v0/bus/stops</code></p>
+              <p><em>Returns</em>: Array of stops with stop_id and title.</p>
 
-<p><em>Returns</em>: Array of stops with stop_id and title.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/stops</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/stops</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">[</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">[</span><span class="w">
 </span><span class="p">{</span><span class="w">
 </span><span class="nl">"stop_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"laplat"</span><span class="p">,</span><span class="w">
 </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"La Plata Hall"</span><span class="w">
@@ -722,27 +981,35 @@
 </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Van Munching Hall (Outbound)"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>Get information about all the stops.</p>
 
-  </div>
-  <div class="post-example">
-    <p>Get information about all the stops.</p>
+              <p>
+                Endpoint:
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/stops</code
+                >
+              </p>
 
-<p>Endpoint: <code class="highlighter-rouge">https://api.umd.io/v0/bus/stops</code></p>
+              <p><em>Returns</em>: Array of stops with stop_id and title.</p>
 
-<p><em>Returns</em>: Array of stops with stop_id and title.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/stops</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/stops</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">[</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">[</span><span class="w">
 </span><span class="p">{</span><span class="w">
 </span><span class="nl">"stop_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"laplat"</span><span class="p">,</span><span class="w">
 </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"La Plata Hall"</span><span class="w">
@@ -772,31 +1039,42 @@
 </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Van Munching Hall (Outbound)"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="get_stops">
+            <div class="post-description">
+              <h2>Get stops</h2>
+              <p>Get full information about a stop.</p>
 
-<section class="post" id="get_stops">
-  <div class="post-description">
-    <h2>Get stops</h2>
-    <p>Get full information about a stop.</p>
+              <p>
+                Endpoint:
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/stops/:stop_id</code
+                >
+              </p>
 
-<p>Endpoint: <code class="highlighter-rouge">https://api.umd.io/v0/bus/stops/:stop_id</code></p>
+              <p>
+                <em>Returns</em>: <a href="#stop_object">Stop object</a> as
+                specified.
+              </p>
 
-<p><em>Returns</em>: <a href="#stop_object">Stop object</a> as specified.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/stops/stamsu_d</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/stops/stamsu_d</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="w"> </span><span class="p">[</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="w"> </span><span class="p">[</span><span class="w">
 </span><span class="p">{</span><span class="w">
 </span><span class="nl">"stop_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"laplat"</span><span class="p">,</span><span class="w">
 </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"La Plata Hall"</span><span class="p">,</span><span class="w">
@@ -804,27 +1082,38 @@
 </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38.9922185"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>Get full information about a stop.</p>
 
-  </div>
-  <div class="post-example">
-    <p>Get full information about a stop.</p>
+              <p>
+                Endpoint:
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/stops/:stop_id</code
+                >
+              </p>
 
-<p>Endpoint: <code class="highlighter-rouge">https://api.umd.io/v0/bus/stops/:stop_id</code></p>
+              <p>
+                <em>Returns</em>: <a href="#stop_object">Stop object</a> as
+                specified.
+              </p>
 
-<p><em>Returns</em>: <a href="#stop_object">Stop object</a> as specified.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/stops/stamsu_d</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/stops/stamsu_d</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="w"> </span><span class="p">[</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="w"> </span><span class="p">[</span><span class="w">
 </span><span class="p">{</span><span class="w">
 </span><span class="nl">"stop_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"laplat"</span><span class="p">,</span><span class="w">
 </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"La Plata Hall"</span><span class="p">,</span><span class="w">
@@ -832,33 +1121,43 @@
 </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38.9922185"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="locations">
+            <div class="post-description">
+              <h2>Get bus locations</h2>
+              <p>Get locations of all the umd buses.</p>
 
-<section class="post" id="locations">
-  <div class="post-description">
-    <h2>Get bus locations</h2>
-    <p>Get locations of all the umd buses.</p>
+              <hr />
 
-<hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/locations</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/bus/locations</code></p>
+              <p>
+                <em>Returns</em>: Object with several properties - meta
+                information and the list of locations for vehicles.
+              </p>
 
-<p><em>Returns</em>: Object with several properties - meta information and the list of locations for vehicles.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/locations</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/locations</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
 </span><span class="nl">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
 </span><span class="p">{</span><span class="w">
 </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"66"</span><span class="p">,</span><span class="w">
@@ -891,29 +1190,39 @@
 </span><span class="nl">"shouldRetry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>Get locations of all the umd buses.</p>
 
-  </div>
-  <div class="post-example">
-    <p>Get locations of all the umd buses.</p>
+              <hr />
 
-<hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/locations</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/bus/locations</code></p>
+              <p>
+                <em>Returns</em>: Object with several properties - meta
+                information and the list of locations for vehicles.
+              </p>
 
-<p><em>Returns</em>: Object with several properties - meta information and the list of locations for vehicles.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/locations</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/locations</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
 </span><span class="nl">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
 </span><span class="p">{</span><span class="w">
 </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"66"</span><span class="p">,</span><span class="w">
@@ -946,31 +1255,41 @@
 </span><span class="nl">"shouldRetry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="route_locations">
+            <div class="post-description">
+              <h2>Locate buses on a route</h2>
+              <p>Get the locations of buses along a bus route.</p>
 
-<section class="post" id="route_locations">
-  <div class="post-description">
-    <h2>Locate buses on a route</h2>
-    <p>Get the locations of buses along a bus route.</p>
+              <p>
+                Route Locations endpoint:
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/routes/:route_id/locations</code
+                >
+              </p>
 
-<p>Route Locations endpoint: <code class="highlighter-rouge">https://api.umd.io/v0/bus/routes/:route_id/locations</code></p>
+              <p>
+                <em>Returns</em>: Predicted arrivals for a stop on the route.
+              </p>
 
-<p><em>Returns</em>: Predicted arrivals for a stop on the route.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/routes/115/locations</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/routes/115/locations</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
 </span><span class="nl">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
 </span><span class="p">{</span><span class="w">
 </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36"</span><span class="p">,</span><span class="w">
@@ -1015,27 +1334,37 @@
 </span><span class="nl">"shouldRetry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>Get the locations of buses along a bus route.</p>
 
-  </div>
-  <div class="post-example">
-    <p>Get the locations of buses along a bus route.</p>
+              <p>
+                Route Locations endpoint:
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/routes/:route_id/locations</code
+                >
+              </p>
 
-<p>Route Locations endpoint: <code class="highlighter-rouge">https://api.umd.io/v0/bus/routes/:route_id/locations</code></p>
+              <p>
+                <em>Returns</em>: Predicted arrivals for a stop on the route.
+              </p>
 
-<p><em>Returns</em>: Predicted arrivals for a stop on the route.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/routes/115/locations</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/routes/115/locations</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
 </span><span class="nl">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
 </span><span class="p">{</span><span class="w">
 </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36"</span><span class="p">,</span><span class="w">
@@ -1080,31 +1409,44 @@
 </span><span class="nl">"shouldRetry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="arrivals">
+            <div class="post-description">
+              <h2>Get predicted arrivals</h2>
+              <p>
+                Get the predicted arrivals for a particular stop on a route.
+              </p>
 
-<section class="post" id="arrivals">
-  <div class="post-description">
-    <h2>Get predicted arrivals</h2>
-    <p>Get the predicted arrivals for a particular stop on a route.</p>
+              <p>
+                Arrivals endpoint:
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/routes/:route_id/arrivals/:stop_id</code
+                >
+              </p>
 
-<p>Arrivals endpoint: <code class="highlighter-rouge">https://api.umd.io/v0/bus/routes/:route_id/arrivals/:stop_id</code></p>
+              <p>
+                <em>Returns</em>: Predicted arrivals for a stop on the route.
+              </p>
 
-<p><em>Returns</em>: Predicted arrivals for a stop on the route.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET
+                  https://api.umd.io/v0/bus/routes/701/arrivals/greefaye</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/routes/701/arrivals/greefaye</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nl">"predictions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"agencyTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"University of Maryland"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"routeTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"701"</span><span class="p">,</span><span class="w">
@@ -1149,27 +1491,40 @@
   </span><span class="p">},</span><span class="w">
 </span><span class="nl">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All data copyright University of Maryland 2015."</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>
+                Get the predicted arrivals for a particular stop on a route.
+              </p>
 
-  </div>
-  <div class="post-example">
-    <p>Get the predicted arrivals for a particular stop on a route.</p>
+              <p>
+                Arrivals endpoint:
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/routes/:route_id/arrivals/:stop_id</code
+                >
+              </p>
 
-<p>Arrivals endpoint: <code class="highlighter-rouge">https://api.umd.io/v0/bus/routes/:route_id/arrivals/:stop_id</code></p>
+              <p>
+                <em>Returns</em>: Predicted arrivals for a stop on the route.
+              </p>
 
-<p><em>Returns</em>: Predicted arrivals for a stop on the route.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET
+                  https://api.umd.io/v0/bus/routes/701/arrivals/greefaye</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/routes/701/arrivals/greefaye</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="nl">"predictions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"agencyTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"University of Maryland"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"routeTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"701"</span><span class="p">,</span><span class="w">
@@ -1214,37 +1569,64 @@
   </span><span class="p">},</span><span class="w">
 </span><span class="nl">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All data copyright University of Maryland 2015."</span><span class="w">
 </span><span class="p">}</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+          </section>
 
-  </div>
-</section>
+          <section class="post" id="route_schedules">
+            <div class="post-description">
+              <h2>Get route schedules</h2>
+              <p>Get the schedules for a route.</p>
 
-<section class="post" id="route_schedules">
-  <div class="post-description">
-    <h2>Get route schedules</h2>
-    <p>Get the schedules for a route.</p>
+              <p>
+                Each route has multiple schedules, because buses run differently
+                on different days of the week. umdio can’t guarantee that the
+                buses will arrive at the scheduled times, but we’ll try to get
+                the schedules to you.
+              </p>
 
-<p>Each route has multiple schedules, because buses run differently on different days of the week. umdio can’t guarantee that the buses will arrive at the scheduled times, but we’ll try to get the schedules to you.</p>
+              <hr />
 
-<hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/routes/:route_id/schedules</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/bus/routes/:route_id/schedules</code></p>
+              <p>
+                <em>Returns</em>: Array of bus schedules for the specified
+                route.
+              </p>
 
-<p><em>Returns</em>: Array of bus schedules for the specified route.</p>
+              <p>
+                Each schedule has the days that schedule runs - ‘f’ for friday,
+                ‘th’ for tuesday and thursday. Also, the direction of the route,
+                route number, an array of the stops on the schedule, and an
+                array of trips. The stops on the schedule are not all of the
+                stops on the route, just the ones that are scheduled. The trips
+                are each arrays of stops and the times the bus is scheduled to
+                stop, in two formats: arrival_time, which is the
+                <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
+                extended time format - hh:mm:ss - and a count of UNIX seconds
+                since the beginning of the day - a number like 21600000, for
+                6:00 AM. All times are EST, since that’s local.
+              </p>
 
-<p>Each schedule has the days that schedule runs - ‘f’ for friday, ‘th’ for tuesday and thursday. Also, the direction of the route, route number, an array of the stops on the schedule, and an array of trips. The stops on the schedule are not all of the stops on the route, just the ones that are scheduled. The trips are each arrays of stops and the times the bus is scheduled to stop, in two formats: arrival_time, which is the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> extended time format - hh:mm:ss - and a count of UNIX seconds since the beginning of the day - a number like 21600000, for 6:00 AM. All times are EST, since that’s local.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/routes/115/schedules</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/routes/115/schedules</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">[{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">[{</span><span class="w">
   </span><span class="nl">"days"</span><span class="p">:</span><span class="s2">"f"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"direction"</span><span class="p">:</span><span class="s2">"ramsapts"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"route"</span><span class="p">:</span><span class="s2">"701"</span><span class="p">,</span><span class="w">
@@ -1265,33 +1647,60 @@
     </span><span class="nl">"arrival_time"</span><span class="p">:</span><span class="s2">"07:38:00"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"arrival_time_secs"</span><span class="p">:</span><span class="s2">"27480000"</span><span class="p">}]]</span><span class="w">
 </span><span class="p">}]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p>Get the schedules for a route.</p>
 
-  </div>
-  <div class="post-example">
-    <p>Get the schedules for a route.</p>
+              <p>
+                Each route has multiple schedules, because buses run differently
+                on different days of the week. umdio can’t guarantee that the
+                buses will arrive at the scheduled times, but we’ll try to get
+                the schedules to you.
+              </p>
 
-<p>Each route has multiple schedules, because buses run differently on different days of the week. umdio can’t guarantee that the buses will arrive at the scheduled times, but we’ll try to get the schedules to you.</p>
+              <hr />
 
-<hr />
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/bus/routes/:route_id/schedules</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">https://api.umd.io/v0/bus/routes/:route_id/schedules</code></p>
+              <p>
+                <em>Returns</em>: Array of bus schedules for the specified
+                route.
+              </p>
 
-<p><em>Returns</em>: Array of bus schedules for the specified route.</p>
+              <p>
+                Each schedule has the days that schedule runs - ‘f’ for friday,
+                ‘th’ for tuesday and thursday. Also, the direction of the route,
+                route number, an array of the stops on the schedule, and an
+                array of trips. The stops on the schedule are not all of the
+                stops on the route, just the ones that are scheduled. The trips
+                are each arrays of stops and the times the bus is scheduled to
+                stop, in two formats: arrival_time, which is the
+                <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
+                extended time format - hh:mm:ss - and a count of UNIX seconds
+                since the beginning of the day - a number like 21600000, for
+                6:00 AM. All times are EST, since that’s local.
+              </p>
 
-<p>Each schedule has the days that schedule runs - ‘f’ for friday, ‘th’ for tuesday and thursday. Also, the direction of the route, route number, an array of the stops on the schedule, and an array of trips. The stops on the schedule are not all of the stops on the route, just the ones that are scheduled. The trips are each arrays of stops and the times the bus is scheduled to stop, in two formats: arrival_time, which is the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> extended time format - hh:mm:ss - and a count of UNIX seconds since the beginning of the day - a number like 21600000, for 6:00 AM. All times are EST, since that’s local.</p>
+              <!-- EXAMPLE -->
+              <p><strong>Sample Request</strong></p>
 
-<!-- EXAMPLE -->
-<p><strong>Sample Request</strong></p>
+              <p>
+                <code class="highlighter-rouge"
+                  >GET https://api.umd.io/v0/bus/routes/115/schedules</code
+                >
+              </p>
 
-<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/routes/115/schedules</code></p>
+              <p>Trimmed Response:</p>
 
-<p>Trimmed Response:</p>
-
-<figure class="highlight">
-  <pre><code class="language-json" data-lang="json"><span class="p">[{</span><span class="w">
+              <figure class="highlight">
+                <pre><code class="language-json" data-lang="json"><span class="p">[{</span><span class="w">
   </span><span class="nl">"days"</span><span class="p">:</span><span class="s2">"f"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"direction"</span><span class="p">:</span><span class="s2">"ramsapts"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"route"</span><span class="p">:</span><span class="s2">"701"</span><span class="p">,</span><span class="w">
@@ -1312,23 +1721,22 @@
     </span><span class="nl">"arrival_time"</span><span class="p">:</span><span class="s2">"07:38:00"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"arrival_time_secs"</span><span class="p">:</span><span class="s2">"27480000"</span><span class="p">}]]</span><span class="w">
 </span><span class="p">}]</span></code></pre>
-</figure>
+              </figure>
 
-<!-- END -->
-
-  </div>
-</section>
+              <!-- END -->
+            </div>
+          </section>
 
           <footer>
-  <div class="footer-text">
-  made with love, by students, for students. <br>
-  get in touch if you want help, or if you want to help. <br><br>
-  <a href="mailto:hi@umd.io">email</a> &nbsp;&nbsp;
-  <a href="http://github.com/umdio">github</a> &nbsp;&nbsp;
-  © umdio 2015-2019
-  </div>
-</footer>
-
+            <div class="footer-text">
+              made with love, by students, for students. <br />
+              get in touch if you want help, or if you want to help.
+              <br /><br />
+              <a href="mailto:hi@umd.io">email</a> &nbsp;&nbsp;
+              <a href="http://github.com/umdio">github</a> &nbsp;&nbsp; © umdio
+              2015-2019
+            </div>
+          </footer>
         </div>
       </div>
     </div>
