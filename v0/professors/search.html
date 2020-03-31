@@ -1,0 +1,59 @@
+<section class="post">
+   <div class="post-description">
+     <h2>Searching professors</h2>
+     <p><p><code class="highlighter-rouge">https://api.umd.io/v0/professors</code></p>
+
+<p><em>Returns:</em> a <a href="/#pagination">Paginated</a> array of <a href="#professor_object">Professor objects</a>.</p>
+
+<hr />
+
+<h3 id="parameters">Parameters:</h3>
+
+<p><code class="highlighter-rouge">sort</code> – specify the field to sort professors by. Professors can either be sorted by <code class="highlighter-rouge">name</code> or <code class="highlighter-rouge">departments</code>. Defaults to ASCENDING order, use a <code class="highlighter-rouge">-</code> prefix to sort by DESCENDING order. For example, <code class="highlighter-rouge">?sort=-departments</code> will sort by departments in DESCENDING order.</p>
+
+<p>To <strong>search</strong> for professors, each property can be used as a parameter. For example, to search for all professors in the <code class="highlighter-rouge">CMSC</code> department in the Spring of 2016, the query would look like <code class="highlighter-rouge">?semester=201601&amp;departments=CMSC</code>. Separate values by commas to search for multiple values for a specific field.</p>
+
+<p><em>See the <a href="/#professor_object">Professor object</a> for a full list of available properties.</em></p>
+
+<!-- EXAMPLE -->
+
+<p>Request: <code class="highlighter-rouge">GET https://api.umd.io/v0/professors?department=CMSC,BMGT&amp;sort=-name</code>
+Trimmed Response:</p>
+
+<figure class="highlight">
+  <pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zhi-Long Chen"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"semester"</span><span class="p">:</span><span class="w"> </span><span class="s2">"201608"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"courses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"BMGT838R"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"BUDT758R"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"BUSI788C"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"BUSM778C"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"departments"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"BMGT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"BUDT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"BUSI"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"BUSM"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zeinab Karake"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"semester"</span><span class="p">:</span><span class="w"> </span><span class="s2">"201608"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"courses"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"BMGT301"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"BMGT301F"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"departments"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"BMGT"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span></code></pre>
+</figure>
+
+<!-- END -->
+</p>
+   </div>
+</section>

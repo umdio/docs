@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>umd.io</title>
+    <description>An API for the University of Maryland.
+</description>
+    <link>https://umd.io/</link>
+    <atom:link href="https://umd.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 31 Mar 2020 13:58:46 -0400</pubDate>
+    <lastBuildDate>Tue, 31 Mar 2020 13:58:46 -0400</lastBuildDate>
+    <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>The major object</title>
+        <description>&lt;p&gt;The major object represents a single major. The properties of a major are:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;major_id&lt;/code&gt; – The ID corresponding with a major&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt; – The name of a major&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;college&lt;/code&gt; – The college corresponding to the major. (Currently unfinished)&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt; – The URL of the main page of a major.&lt;/p&gt;
+
+&lt;!-- EXAMPLE --&gt;
+
+&lt;p&gt;&lt;em&gt;Trimmed sample response:&lt;/em&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;
+  &lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;major_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;AGRICULTURALANDRESOURCEECONOMICS&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Agricultural and Resource Economics&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;college&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://www.arec.umd.edu/undergraduate/major-requirements/agricultural-and-resource-economics&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/figure&gt;
+
+&lt;!-- END --&gt;
+</description>
+        <pubDate>Mon, 01 Jan 2018 00:00:00 -0500</pubDate>
+        <link>https://umd.io/majors/majors.html</link>
+        <guid isPermaLink="true">https://umd.io/majors/majors.html</guid>
+        
+        
+        <category>majors</category>
+        
+      </item>
+    
+      <item>
+        <title>Searching professors</title>
+        <description>&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://api.umd.io/v0/professors&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Returns:&lt;/em&gt; a &lt;a href=&quot;/#pagination&quot;&gt;Paginated&lt;/a&gt; array of &lt;a href=&quot;#professor_object&quot;&gt;Professor objects&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;parameters&quot;&gt;Parameters:&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sort&lt;/code&gt; – specify the field to sort professors by. Professors can either be sorted by &lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;departments&lt;/code&gt;. Defaults to ASCENDING order, use a &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; prefix to sort by DESCENDING order. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;?sort=-departments&lt;/code&gt; will sort by departments in DESCENDING order.&lt;/p&gt;
+
+&lt;p&gt;To &lt;strong&gt;search&lt;/strong&gt; for professors, each property can be used as a parameter. For example, to search for all professors in the &lt;code class=&quot;highlighter-rouge&quot;&gt;CMSC&lt;/code&gt; department in the Spring of 2016, the query would look like &lt;code class=&quot;highlighter-rouge&quot;&gt;?semester=201601&amp;amp;departments=CMSC&lt;/code&gt;. Separate values by commas to search for multiple values for a specific field.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;See the &lt;a href=&quot;/#professor_object&quot;&gt;Professor object&lt;/a&gt; for a full list of available properties.&lt;/em&gt;&lt;/p&gt;
+
+&lt;!-- EXAMPLE --&gt;
+
+&lt;p&gt;Request: &lt;code class=&quot;highlighter-rouge&quot;&gt;GET https://api.umd.io/v0/professors?department=CMSC,BMGT&amp;amp;sort=-name&lt;/code&gt;
+Trimmed Response:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;
+  &lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Zhi-Long Chen&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;semester&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;201608&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;courses&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BMGT838R&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BUDT758R&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BUSI788C&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BUSM778C&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;departments&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BMGT&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BUDT&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BUSI&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BUSM&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Zeinab Karake&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;semester&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;201608&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;courses&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BMGT301&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BMGT301F&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;departments&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BMGT&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/figure&gt;
+
+&lt;!-- END --&gt;
+</description>
+        <pubDate>Wed, 18 Jan 2017 00:00:00 -0500</pubDate>
+        <link>https://umd.io/professors/search.html</link>
+        <guid isPermaLink="true">https://umd.io/professors/search.html</guid>
+        
+        
+        <category>professors</category>
+        
+      </item>
+    
+      <item>
+        <title>The professor object</title>
+        <description>&lt;p&gt;The professor object represents a UMD professor. The properties of a professor are:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt; – the name of a professor as it appears on Testudo..&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;courses&lt;/code&gt; – An array of courses that the professor has taught in the given semester.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;departments&lt;/code&gt; – An array of the departments a professor has taught in the given semester.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;semester&lt;/code&gt; – Six-digit number identifying the semester the course is offered.&lt;/p&gt;
+
+&lt;!-- EXAMPLE --&gt;
+&lt;p&gt;&lt;strong&gt;Sample professor object&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;
+  &lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Mark Wellman&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;semester&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;201608&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;courses&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BMGT289B&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BMGT466&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CPBE225&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;departments&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BMGT&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CPBE&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/figure&gt;
+
+&lt;!-- END --&gt;
+</description>
+        <pubDate>Wed, 18 Jan 2017 00:00:00 -0500</pubDate>
+        <link>https://umd.io/professors/professor_object.html</link>
+        <guid isPermaLink="true">https://umd.io/professors/professor_object.html</guid>
+        
+        
+        <category>professors</category>
+        
+      </item>
+    
+      <item>
+        <title>Versioning</title>
+        <description>&lt;p&gt;The current version is version 0.&lt;/p&gt;
+
+&lt;p&gt;When we release a new version of the API that isn’t backwards-compatible, we’ll update the version number. The old version will remain accessible, but we’ll deprecate and no longer support them after a reasonable amount of time. Even though ‘/v0/courses’ might be very different than ‘/v1/courses’, your app that uses v0 will still work.&lt;/p&gt;
+
+&lt;p&gt;Every request needs to specify the version number in the url. If you leave out the ‘/v0’ or ‘/v1’, or you’ll get an error.&lt;/p&gt;
+
+&lt;!-- EXAMPLE --&gt;
+
+&lt;p&gt;The current version is live at:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://api.umd.io/v0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;!-- END_EXAMPLE --&gt;
+</description>
+        <pubDate>Mon, 02 Mar 2015 00:00:00 -0500</pubDate>
+        <link>https://umd.io/api/versions.html</link>
+        <guid isPermaLink="true">https://umd.io/api/versions.html</guid>
+        
+        
+        <category>api</category>
+        
+      </item>
+    
+      <item>
+        <title>Pagination</title>
+        <description>&lt;p&gt;Endpoints that return a large amount of items are paginated to 30 items by default. You can specify further pages with the &lt;code class=&quot;highlighter-rouge&quot;&gt;?page&lt;/code&gt; parameter. You can also set a custom page size up to 100 with the &lt;code class=&quot;highlighter-rouge&quot;&gt;?per_page&lt;/code&gt; parameter.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note that page numbering is 1-based and that omitting the ?page parameter will return the first page.&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;link-header&quot;&gt;Link Header:&lt;/h3&gt;
+
+&lt;p&gt;The possible &lt;code class=&quot;highlighter-rouge&quot;&gt;rel&lt;/code&gt; values are:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;next&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Shows the URL of the immediate next page of results.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;last&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Shows the URL of the last page of results.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;first&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Shows the URL of the first page of results.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prev&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Shows the URL of the immediate previous page of results.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;!-- EXAMPLE --&gt;
+
+&lt;p&gt;&lt;em&gt;Example:&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;https://api.umd.io/v0/courses?page=2&amp;amp;per_page=100&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;response-link-header&quot;&gt;Response Link Header:&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Link: &amp;lt;https://api.umd.io/v0/courses?page=2&amp;amp;per_page=100&amp;gt;; rel=”next”, &amp;lt;https://api.umd.io/v0/courses?page=1&amp;amp;per_page=100&amp;gt;; rel=”prev”
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;!-- END_EXAMPLE --&gt;
+</description>
+        <pubDate>Sat, 28 Feb 2015 00:00:00 -0500</pubDate>
+        <link>https://umd.io/api/pagination.html</link>
+        <guid isPermaLink="true">https://umd.io/api/pagination.html</guid>
+        
+        
+        <category>api</category>
+        
+      </item>
+    
+      <item>
+        <title>Searching courses</title>
+        <description>&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://api.umd.io/v0/courses&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Returns:&lt;/em&gt; a &lt;a href=&quot;/#pagination&quot;&gt;Paginated&lt;/a&gt; array of &lt;a href=&quot;#course_object&quot;&gt;Course objects&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;parameters&quot;&gt;Parameters:&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sort&lt;/code&gt; – a comma-separated list of course properties. Defaults to ASCENDING order, use a &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; (minus) prefix for DESCENDING order.
+&lt;br /&gt;For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;?sort=course_id,-credits&lt;/code&gt; sorts the results ASCENDING by course_id and DESCENDING by credits.&lt;/p&gt;
+
+&lt;p&gt;To &lt;strong&gt;search&lt;/strong&gt; for courses, use each course property as a parameter and one of the following comparisions: &lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt; (equals), &lt;code class=&quot;highlighter-rouge&quot;&gt;!=&lt;/code&gt; (not equals), &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt; (less than), &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; (greater than), &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;=&lt;/code&gt; (less than or equals) and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;=&lt;/code&gt; (greater than or equals) followed by the value or a list of values.
+&lt;br /&gt;For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;?dept_id=CMSC,BMGT&amp;amp;credits&amp;lt;2&lt;/code&gt; gives all courses in the CMSC or BMGT departments worth less than 2 credits.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;See the &lt;a href=&quot;/#course_object&quot;&gt;Course object&lt;/a&gt; for a full list of available properties.&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;When searching array properties, the &lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt; (pipe) delimeter may be used instead of a comma to only return results that all the values.
+&lt;br /&gt;For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;?grading_method=Audit|Pass-Fail&lt;/code&gt; gives all courses whose grading method is both Audit and Pass-Fail.&lt;/p&gt;
+
+&lt;!-- EXAMPLE --&gt;
+
+&lt;p&gt;Request: &lt;code class=&quot;highlighter-rouge&quot;&gt;GET https://api.umd.io/v0/courses?dept_id=CMSC,BMGT&amp;amp;credits&amp;lt;2&lt;/code&gt;
+Trimmed Response:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;
+  &lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;course_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BMGT888W&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Special Topics in Supply Chain Management; Workshop in Supply Chain Management&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;dept_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BMGT&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;credits&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;sections&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BMGT888W-0101&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BMGT888W-0101&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;course_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CMSC100&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Bits and Bytes of Computer Science&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;dept_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CMSC&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;credits&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;sections&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CMSC100-0101&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CMSC100-0101&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/figure&gt;
+
+&lt;!-- END --&gt;
+</description>
+        <pubDate>Fri, 27 Feb 2015 00:00:00 -0500</pubDate>
+        <link>https://umd.io/courses/search.html</link>
+        <guid isPermaLink="true">https://umd.io/courses/search.html</guid>
+        
+        
+        <category>courses</category>
+        
+      </item>
+    
+      <item>
+        <title>List all courses</title>
+        <description>&lt;p&gt;List all the courses available (for the given semester, or the current semester by default).&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://api.umd.io/v0/courses/list&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Returns:&lt;/em&gt; Array of objects with three properties: &lt;code class=&quot;highlighter-rouge&quot;&gt;course_id&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;department&lt;/code&gt;&lt;/p&gt;
+
+&lt;!-- EXAMPLE --&gt;
+
+&lt;p&gt;Request: &lt;code class=&quot;highlighter-rouge&quot;&gt;GET https://api.umd.io/v0/courses/list&lt;/code&gt;
+Trimmed Response:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;
+  &lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;course_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;AASP100&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Introduction to African American Studies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;department&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;African American Studies&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;course_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;AASP101&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Public Policy and the Black Community&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;department&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;African American Studies&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/figure&gt;
+
+&lt;!-- END --&gt;
+</description>
+        <pubDate>Thu, 26 Feb 2015 00:00:00 -0500</pubDate>
+        <link>https://umd.io/courses/list_courses.html</link>
+        <guid isPermaLink="true">https://umd.io/courses/list_courses.html</guid>
+        
+        
+        <category>courses</category>
+        
+      </item>
+    
+      <item>
+        <title>Expanding objects</title>
+        <description>&lt;p&gt;Queries that return the ID of another object nested within the result can be expanded via the &lt;code class=&quot;highlighter-rouge&quot;&gt;?expand=&amp;lt;object&amp;gt;&lt;/code&gt; parameter. For example, the query &lt;code class=&quot;highlighter-rouge&quot;&gt;https://api.umd.io/v0/courses/cmsc131&lt;/code&gt; returns a “sections” key with an array of Section object ids. To expand these into their full objects, you can pass &lt;code class=&quot;highlighter-rouge&quot;&gt;?expand=sections&lt;/code&gt; to expand the section ids to their section objects.&lt;/p&gt;
+
+&lt;!-- EXAMPLE --&gt;
+
+&lt;p&gt;Example expand query: &lt;code class=&quot;highlighter-rouge&quot;&gt;https://api.umd.io/v0/courses/cmsc131?expand=sections&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Currently, this only works on the &lt;a href=&quot;/courses/#get_courses&quot;&gt;Get courses&lt;/a&gt; endpoint.&lt;/p&gt;
+
+&lt;!-- END_EXAMPLE --&gt;
+</description>
+        <pubDate>Thu, 26 Feb 2015 00:00:00 -0500</pubDate>
+        <link>https://umd.io/api/expanding_objects.html</link>
+        <guid isPermaLink="true">https://umd.io/api/expanding_objects.html</guid>
+        
+        
+        <category>api</category>
+        
+      </item>
+    
+      <item>
+        <title>The course object</title>
+        <description>&lt;p&gt;The course object represents a single UMD course. The properties of a course are:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;course_id&lt;/code&gt; – a unique string ID with a four-letter &lt;code class=&quot;highlighter-rouge&quot;&gt;dept_id&lt;/code&gt; followed by a three digit course number and an optional letter. Examples: &lt;em&gt;“CSMC132”, “BMGT468Z”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt; – string name of the course.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dept_id&lt;/code&gt; – Four-letter string like ENGL or BMGT.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;department&lt;/code&gt; – Full name of the department that offers a course.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;semester&lt;/code&gt; – Six-digit number identifying the semester the course is offered. Currently, the API only offers courses for the current semester, but that will change soon.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;credits&lt;/code&gt; – One-digit number of credits the course is worth.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grading_method&lt;/code&gt; – Array of string grading options available. The possible options are &lt;em&gt;“Regular”, “Pass-Fail”, “Audit”, and “Sat-Fail”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;core&lt;/code&gt; – Array of strings of CORE requirements filled by a course.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gen_ed&lt;/code&gt; – Array of strings of GEN. ED requirements filled by a course.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;description&lt;/code&gt; – String description of a course.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;relationships&lt;/code&gt; – contains the relationships and restrictions of a course which can be: &lt;code class=&quot;highlighter-rouge&quot;&gt;coreqs&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;prereqs&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;restrictions&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;restricted_to&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;credit_only_granted_for&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;credit_granted_for&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;formerly&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;also_offered_as&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sections&lt;/code&gt; – Array of &lt;code class=&quot;highlighter-rouge&quot;&gt;section_id&lt;/code&gt; strings of the sections of a course. See &lt;a href=&quot;#section_object&quot;&gt;section object&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!-- EXAMPLE --&gt;
+&lt;p&gt;&lt;strong&gt;Sample course object&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;
+  &lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;course_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ENEE380&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Electromagnetic Theory&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;dept_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ENEE&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;department&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Electrical &amp;amp; Computer Engineering&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;semester&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;201501&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;credits&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;grading_method&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Regular&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;core&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;gen_ed&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Introduction to electromagnetic...&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;relationships&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;coreqs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;prereqs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Prerequisite: PHYS271, PHYS270, ...&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;restrictions&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;restricted_to&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;credit_only_granted_for&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;credit_granted_for&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;formerly&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;also_offered_as&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;sections&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ENEE380-0101&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ENEE380-0102&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ENEE380-0103&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/figure&gt;
+
+&lt;!-- END --&gt;
+</description>
+        <pubDate>Wed, 25 Feb 2015 00:00:00 -0500</pubDate>
+        <link>https://umd.io/courses/course_object.html</link>
+        <guid isPermaLink="true">https://umd.io/courses/course_object.html</guid>
+        
+        
+        <category>courses</category>
+        
+      </item>
+    
+      <item>
+        <title>Errors</title>
+        <description>&lt;p&gt;&lt;strong&gt;200 - OK&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Everything worked as expected. If you aren’t getting the result you expected, it might mean that the data you are trying to access doesn’t actually exist in the database.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;400 - Bad Request&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This means that the url in your request couldn’t possibly match anything in the api, probably because of a misspelling.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;404 - Not Found&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The requested url doesn’t exist. This happens when the url isn’t anything on our end, not even a badly formed request.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;500 - Internal Server Error&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Something went wrong on our end. We try not to send you this. If you get one, let us know, and send us all you can about the circumstances of your error.&lt;/p&gt;
+
+&lt;!-- EXAMPLE --&gt;
+&lt;p&gt;&lt;strong&gt;Sample requests&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://api.umd.io/v0/courses/ENGL101&lt;/code&gt;
+200: Works as expected&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://api.umd.io/v0/courses/ene10&lt;/code&gt;
+400: ‘ene’ is only 3 letters and ‘10’ is only two digits, so there is no way this could be a proper request.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://blargyblarg.umd.io&lt;/code&gt;
+404: blargybarg isn’t on our server, so you won’t find it. If you misspell a word in a url, you might get this.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://api.umd.io/v5/courses&lt;/code&gt;
+404: Courses aren’t at version 5 yet. (We’re not even up to version 1!)&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://api.umd.io/courses&lt;/code&gt;
+404: You need to specify a version number!&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://api.umd.io/v0/course&lt;/code&gt;
+404: ‘course’ isn’t an endpoint; ‘courses’ is. Even little misspellings will get ya!&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://api.umd.io/v0/courses/ENGL115&lt;/code&gt;
+404: There’s no course with that course_id.&lt;/p&gt;
+
+&lt;!-- END --&gt;
+</description>
+        <pubDate>Wed, 25 Feb 2015 00:00:00 -0500</pubDate>
+        <link>https://umd.io/api/errors.html</link>
+        <guid isPermaLink="true">https://umd.io/api/errors.html</guid>
+        
+        
+        <category>api</category>
+        
+      </item>
+    
+  </channel>
+</rss>

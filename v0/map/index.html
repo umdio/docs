@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Map | umd.io</title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <meta name="description" content="An API for the University of Maryland.
+">
+  <link rel="stylesheet" href="/css/main.css?v=1.1">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/default.min.css">
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/api.js"></script>
+</head>
+
+  <body>
+    <div class="header">
+      <div id="btn" class="btn">
+        <div class='btn-top'></div>
+        <div class='btn-middle'></div>
+        <div class='btn-bottom'></div>
+      </div>
+      <header>
+  <a href="https://umd.io">
+    <div class="logo">
+      <img src="/images/umdio-logo@2x.png" alt="umd.io" />
+    </div>
+  </a>
+</header>
+
+    </div>
+    <div class="container">
+      <div class="content">
+        <div class="sidebar" id="sidebar">
+          <div class="menu">
+            <div id="menu" class="menu-wrapper">
+  <nav>
+    <p class="ref-title">API</p>
+    
+    
+    
+    <ul class="ref-section">
+      <li><a class="menu-item" href="/#intro">Introduction</a></li>
+    
+    <li><a class="menu-item" href="/#versions">Versioning</a></li>
+    
+    <li><a class="menu-item" href="/#pagination">Pagination</a></li>
+    
+    <li><a class="menu-item" href="/#expanding_objects">Expanding objects</a></li>
+    
+    <li><a class="menu-item" href="/#errors">Errors</a></li>
+    
+    <li><a class="menu-item" href="/#tips-tricks">Tips and Tricks</a></li>
+    
+    <li><a class="menu-item" href="/#terms">Terms of Use</a></li>
+    
+    </ul>
+    <p class="ref-title">ENDPOINTS</p>
+    <ul class="ref-section">
+    
+      
+    
+      
+      
+      
+      <li class="ref-endpoint ">
+        <a class="ref-subsection" href="/bus/">Bus</a>
+        <ul class="ref-endpoint-item">
+        
+        
+          
+          
+          <li><a class="menu-item" href="/bus/#list_routes">List routes</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/bus/#route_object">The route object</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/bus/#get_routes">Get routes</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/bus/#stop_object">Stop object</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/bus/#stops">List stops</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/bus/#get_stops">Get stops</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/bus/#locations">Get bus locations</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/bus/#route_locations">Locate buses on a route</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/bus/#arrivals">Get predicted arrivals</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/bus/#route_schedules">Get route schedules</a></li>
+        
+        </ul>
+      </li>
+      
+    
+      
+      
+      
+      <li class="ref-endpoint ">
+        <a class="ref-subsection" href="/courses/">Courses</a>
+        <ul class="ref-endpoint-item">
+        
+        
+          
+          
+          <li><a class="menu-item" href="/courses/#search">Searching courses</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/courses/#list_courses">List all courses</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/courses/#course_object">The course object</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/courses/#get_courses">Get courses</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/courses/#sections">Sections</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/courses/#section_object">Section object</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/courses/#get_sections">Get sections</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/courses/#get_departments">Get departments</a></li>
+        
+        </ul>
+      </li>
+      
+    
+      
+    
+      
+    
+      
+      
+      
+      <li class="ref-endpoint ">
+        <a class="ref-subsection" href="/majors/">Majors</a>
+        <ul class="ref-endpoint-item">
+        
+        
+          
+          
+          <li><a class="menu-item" href="/majors/#majors">The major object</a></li>
+        
+        </ul>
+      </li>
+      
+    
+      
+      
+      
+      <li class="ref-endpoint active">
+        <a class="ref-subsection" href="/map/">Map</a>
+        <ul class="ref-endpoint-item">
+        
+        
+          
+          
+          <li><a class="menu-item" href="#building_object">The building object</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="#list_buildings">List buildings</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="#get_buildings">Get buildings</a></li>
+        
+        </ul>
+      </li>
+      
+    
+      
+      
+      
+      <li class="ref-endpoint ">
+        <a class="ref-subsection" href="/professors/">Professors</a>
+        <ul class="ref-endpoint-item">
+        
+        
+          
+          
+          <li><a class="menu-item" href="/professors/#search">Searching professors</a></li>
+        
+          
+          
+          <li><a class="menu-item" href="/professors/#professor_object">The professor object</a></li>
+        
+        </ul>
+      </li>
+      
+    
+      
+    
+    </ul>
+  </nav>
+</div>
+
+          </div>
+        </div>
+        <div class="docs">
+          <section class="post">
+  <div class="post-description">
+    <h1>Map</h1>
+    <p>This endpoint lets you get location data about University of maryland. Right now, it’s just the locations of buses, but there’s tons more data available, and we will gradually add it and document it. If you want to use the data now, now, now, check out <a href="http://maps.umd.edu/arcgis/rest/services">http://maps.umd.edu/arcgis/rest/services</a> - that’s the source of all the umd map data. It’s a little confusing - that’s why we want to wrap it!</p>
+
+<p>All map data is copyright University of Maryland 2015.</p>
+
+<!-- EXAMPLE -->
+
+<h3 id="map-endpoint">Map Endpoint</h3>
+
+<p><code class="highlighter-rouge">https://api.umd.io/v0/map</code></p>
+
+<!-- END -->
+
+  </div>
+  <div class="post-example">
+    <p>This endpoint lets you get location data about University of maryland. Right now, it’s just the locations of buses, but there’s tons more data available, and we will gradually add it and document it. If you want to use the data now, now, now, check out <a href="http://maps.umd.edu/arcgis/rest/services">http://maps.umd.edu/arcgis/rest/services</a> - that’s the source of all the umd map data. It’s a little confusing - that’s why we want to wrap it!</p>
+
+<p>All map data is copyright University of Maryland 2015.</p>
+
+<!-- EXAMPLE -->
+
+<h3 id="map-endpoint">Map Endpoint</h3>
+
+<p><code class="highlighter-rouge">https://api.umd.io/v0/map</code></p>
+
+<!-- END -->
+
+  </div>
+</section>
+<!-- PAGE CAT = map --> 
+
+<section class="post" id="building_object">
+  <div class="post-description">
+    <h2>The building object</h2>
+    <p>The building object represents the location of a single building. The properties of a building are:</p>
+
+<p><code class="highlighter-rouge">name</code> – name of the building.</p>
+
+<p><code class="highlighter-rouge">code</code> – Some buildings have codes.</p>
+
+<p><code class="highlighter-rouge">number</code> – unique building number. When you are getting a building, you append its number to the buildings url.</p>
+
+<p><code class="highlighter-rouge">lng</code> – longitude of the building.</p>
+
+<p><code class="highlighter-rouge">lat</code> – latitude of the building.</p>
+
+<!-- EXAMPLE -->
+<p><strong>Sample building object</strong></p>
+
+<figure class="highlight">
+  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"251 North"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"251"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-76.9496090325357"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38.99274005"</span><span class="w">
+</span><span class="p">}</span></code></pre>
+</figure>
+
+<!-- END -->
+
+  </div>
+  <div class="post-example">
+    <p>The building object represents the location of a single building. The properties of a building are:</p>
+
+<p><code class="highlighter-rouge">name</code> – name of the building.</p>
+
+<p><code class="highlighter-rouge">code</code> – Some buildings have codes.</p>
+
+<p><code class="highlighter-rouge">number</code> – unique building number. When you are getting a building, you append its number to the buildings url.</p>
+
+<p><code class="highlighter-rouge">lng</code> – longitude of the building.</p>
+
+<p><code class="highlighter-rouge">lat</code> – latitude of the building.</p>
+
+<!-- EXAMPLE -->
+<p><strong>Sample building object</strong></p>
+
+<figure class="highlight">
+  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"251 North"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"251"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-76.9496090325357"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38.99274005"</span><span class="w">
+</span><span class="p">}</span></code></pre>
+</figure>
+
+<!-- END -->
+
+  </div>
+</section>
+
+<section class="post" id="list_buildings">
+  <div class="post-description">
+    <h2>List buildings</h2>
+    <p>Get a list of the available buildings.</p>
+
+<p><em>Returns</em>: A list of buildings with names and numbers of all the buildings.</p>
+
+<!-- EXAMPLE -->
+<p><strong>List Buildings</strong></p>
+
+<p><code class="highlighter-rouge">https://api.umd.io/v0/map/buildings</code></p>
+
+<!-- END -->
+
+  </div>
+  <div class="post-example">
+    <p>Get a list of the available buildings.</p>
+
+<p><em>Returns</em>: A list of buildings with names and numbers of all the buildings.</p>
+
+<!-- EXAMPLE -->
+<p><strong>List Buildings</strong></p>
+
+<p><code class="highlighter-rouge">https://api.umd.io/v0/map/buildings</code></p>
+
+<!-- END -->
+
+  </div>
+</section>
+
+<section class="post" id="get_buildings">
+  <div class="post-description">
+    <h2>Get buildings</h2>
+    <p>Get location data about one or more buildings. Comma separated building numbers are the parameters.</p>
+
+<p><code class="highlighter-rouge">https://api.umd.io/v0/map/buildings/:building_number</code></p>
+
+<p><em>Returns</em>: A list of complete <a href="#building_object">building objects</a>.</p>
+
+<!-- EXAMPLE -->
+<p><strong>Get Buildings</strong></p>
+
+<p>GET <code class="highlighter-rouge">https://api.umd.io/v0/map/buildings/251</code></p>
+
+<p>returns</p>
+
+<figure class="highlight">
+  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"251 North"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"251"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-76.9496090325357"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38.99274005"</span><span class="w">
+</span><span class="p">}</span></code></pre>
+</figure>
+
+<!-- END -->
+
+  </div>
+  <div class="post-example">
+    <p>Get location data about one or more buildings. Comma separated building numbers are the parameters.</p>
+
+<p><code class="highlighter-rouge">https://api.umd.io/v0/map/buildings/:building_number</code></p>
+
+<p><em>Returns</em>: A list of complete <a href="#building_object">building objects</a>.</p>
+
+<!-- EXAMPLE -->
+<p><strong>Get Buildings</strong></p>
+
+<p>GET <code class="highlighter-rouge">https://api.umd.io/v0/map/buildings/251</code></p>
+
+<p>returns</p>
+
+<figure class="highlight">
+  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"251 North"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"251"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-76.9496090325357"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38.99274005"</span><span class="w">
+</span><span class="p">}</span></code></pre>
+</figure>
+
+<!-- END -->
+
+  </div>
+</section>
+
+          <footer>
+  <div class="footer-text">
+  made with love, by students, for students. <br>
+  get in touch if you want help, or if you want to help. <br><br>
+  <a href="mailto:hi@umd.io">email</a> &nbsp;&nbsp;
+  <a href="http://github.com/umdio">github</a> &nbsp;&nbsp;
+  © umdio 2015-2019
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

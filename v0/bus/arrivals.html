@@ -1,0 +1,68 @@
+<section class="post">
+   <div class="post-description">
+     <h2>Get predicted arrivals</h2>
+     <p><p>Get the predicted arrivals for a particular stop on a route.</p>
+
+<p>Arrivals endpoint: <code class="highlighter-rouge">https://api.umd.io/v0/bus/routes/:route_id/arrivals/:stop_id</code></p>
+
+<p><em>Returns</em>: Predicted arrivals for a stop on the route.</p>
+
+<!-- EXAMPLE -->
+<p><strong>Sample Request</strong></p>
+
+<p><code class="highlighter-rouge">GET https://api.umd.io/v0/bus/routes/701/arrivals/greefaye</code></p>
+
+<p>Trimmed Response:</p>
+
+<figure class="highlight">
+  <pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nl">"predictions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"agencyTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"University of Maryland"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"routeTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"701"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"routeTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"701 UMB BioPark"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ramsay St Apts"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"prediction"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"isDeparture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"seconds"</span><span class="p">:</span><span class="w"> </span><span class="s2">"194"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"66"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"affectedByLayover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"block"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7011"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dirTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ramsapts"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"epochTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1428953061631"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"isDeparture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"seconds"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2523"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"66"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"affectedByLayover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"block"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7011"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dirTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ramsapts"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"epochTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1428955390195"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"isDeparture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"82"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"seconds"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4923"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"66"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"affectedByLayover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"block"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7011"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dirTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ramsapts"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"epochTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1428957790195"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"stopTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green St &amp; Fayette St"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"stopTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"greefaye"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="nl">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All data copyright University of Maryland 2015."</span><span class="w">
+</span><span class="p">}</span></code></pre>
+</figure>
+
+<!-- END -->
+</p>
+   </div>
+</section>
