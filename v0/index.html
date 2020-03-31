@@ -1,606 +1,1000 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-  <meta name="MobileOptimized" content="width">
-  <meta name="HandheldFriendly" content="true">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction | umd.io</title>
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <meta name="description" content="An API for the University of Maryland.
-">
-  <link rel="stylesheet" href="/css/main.css?v=1.1">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet"> 
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/default.min.css">
-  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/api.js"></script>
-</head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Introduction | umd.io</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta
+      name="description"
+      content="An API for the University of Maryland.
+"
+    />
+    <link rel="stylesheet" href="./css/main.css?v=1.1" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href=".//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/default.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/api.js"></script>
+  </head>
 
   <body>
     <div class="header">
       <div id="btn" class="btn">
-        <div class='btn-top'></div>
-        <div class='btn-middle'></div>
-        <div class='btn-bottom'></div>
+        <div class="btn-top"></div>
+        <div class="btn-middle"></div>
+        <div class="btn-bottom"></div>
       </div>
       <header>
-  <a href="https://umd.io">
-    <div class="logo">
-      <img src="/images/umdio-logo@2x.png" alt="umd.io" />
-    </div>
-  </a>
-</header>
-
+        <a href="https://umd.io">
+          <div class="logo">
+            <img src="/images/umdio-logo@2x.png" alt="umd.io" />
+          </div>
+        </a>
+      </header>
     </div>
     <div class="container">
       <div class="content">
         <div class="sidebar" id="sidebar">
           <div class="menu">
             <div id="menu" class="menu-wrapper">
-  <nav>
-    <p class="ref-title">API</p>
-    
-    
-    
-    <ul class="ref-section">
-      <li><a class="menu-item" href="#intro">Introduction</a></li>
-    
-    <li><a class="menu-item" href="#versions">Versioning</a></li>
-    
-    <li><a class="menu-item" href="#pagination">Pagination</a></li>
-    
-    <li><a class="menu-item" href="#expanding_objects">Expanding objects</a></li>
-    
-    <li><a class="menu-item" href="#errors">Errors</a></li>
-    
-    <li><a class="menu-item" href="#tips-tricks">Tips and Tricks</a></li>
-    
-    <li><a class="menu-item" href="#terms">Terms of Use</a></li>
-    
-    </ul>
-    <p class="ref-title">ENDPOINTS</p>
-    <ul class="ref-section">
-    
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/bus/">Bus</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#list_routes">List routes</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#route_object">The route object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#get_routes">Get routes</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#stop_object">Stop object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#stops">List stops</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#get_stops">Get stops</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#locations">Get bus locations</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#route_locations">Locate buses on a route</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#arrivals">Get predicted arrivals</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/bus/#route_schedules">Get route schedules</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/courses/">Courses</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#search">Searching courses</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#list_courses">List all courses</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#course_object">The course object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#get_courses">Get courses</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#sections">Sections</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#section_object">Section object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#get_sections">Get sections</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/courses/#get_departments">Get departments</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-    
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/majors/">Majors</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/majors/#majors">The major object</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/map/">Map</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/map/#building_object">The building object</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/map/#list_buildings">List buildings</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/map/#get_buildings">Get buildings</a></li>
-        
-        </ul>
-      </li>
-      
-    
-      
-      
-      
-      <li class="ref-endpoint ">
-        <a class="ref-subsection" href="/professors/">Professors</a>
-        <ul class="ref-endpoint-item">
-        
-        
-          
-          
-          <li><a class="menu-item" href="/professors/#search">Searching professors</a></li>
-        
-          
-          
-          <li><a class="menu-item" href="/professors/#professor_object">The professor object</a></li>
-        
-        </ul>
-      </li>
-      
-    
-    </ul>
-  </nav>
-</div>
+              <nav>
+                <p class="ref-title">API</p>
 
+                <ul class="ref-section">
+                  <li><a class="menu-item" href="#intro">Introduction</a></li>
+
+                  <li><a class="menu-item" href="#versions">Versioning</a></li>
+
+                  <li>
+                    <a class="menu-item" href="#pagination">Pagination</a>
+                  </li>
+
+                  <li>
+                    <a class="menu-item" href="#expanding_objects"
+                      >Expanding objects</a
+                    >
+                  </li>
+
+                  <li><a class="menu-item" href="#errors">Errors</a></li>
+
+                  <li>
+                    <a class="menu-item" href="#tips-tricks">Tips and Tricks</a>
+                  </li>
+
+                  <li><a class="menu-item" href="#terms">Terms of Use</a></li>
+                </ul>
+                <p class="ref-title">ENDPOINTS</p>
+                <ul class="ref-section">
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./bus/">Bus</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./bus/#list_routes"
+                          >List routes</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#route_object"
+                          >The route object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#get_routes"
+                          >Get routes</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#stop_object"
+                          >Stop object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#stops">List stops</a>
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#get_stops"
+                          >Get stops</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#locations"
+                          >Get bus locations</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#route_locations"
+                          >Locate buses on a route</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#arrivals"
+                          >Get predicted arrivals</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./bus/#route_schedules"
+                          >Get route schedules</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./courses/">Courses</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./courses/#search"
+                          >Searching courses</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#list_courses"
+                          >List all courses</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#course_object"
+                          >The course object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#get_courses"
+                          >Get courses</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#sections"
+                          >Sections</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#section_object"
+                          >Section object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#get_sections"
+                          >Get sections</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./courses/#get_departments"
+                          >Get departments</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./majors/">Majors</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./majors/#majors"
+                          >The major object</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./map/">Map</a>
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./map/#building_object"
+                          >The building object</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./map/#list_buildings"
+                          >List buildings</a
+                        >
+                      </li>
+
+                      <li>
+                        <a class="menu-item" href="./map/#get_buildings"
+                          >Get buildings</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="ref-endpoint ">
+                    <a class="ref-subsection" href="./professors/"
+                      >Professors</a
+                    >
+                    <ul class="ref-endpoint-item">
+                      <li>
+                        <a class="menu-item" href="./professors/#search"
+                          >Searching professors</a
+                        >
+                      </li>
+
+                      <li>
+                        <a
+                          class="menu-item"
+                          href="./professors/#professor_object"
+                          >The professor object</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
         <div class="docs">
           <section class="post">
-  <div class="post-description">
-    <h1>Introduction</h1>
-    <p>Welcome to <strong>umd.io</strong>, the open-source API for University of Maryland data. If you are building a University data-focused app, hack, or project, you’re in the right place. This site will walk you through basic API use and document all supported API calls.</p>
-
-<p>Read more about the motivation and vision for the project in the <a href="https://github.com/umdio/umdio/blob/master/Motivations.md">blog post</a>.</p>
-
-<p><strong>umd.io</strong> is a GETful API. It follows RESTful conventions, but for now, you can only get data – you can’t create, update, or destroy.</p>
-
-<p>The API is in version 0. We are adding, changing, and breaking things all the time. <a href="mailto:hi@umd.io">Contact the team</a> or (preferably) create an <a href="https://github.com/umdio/umdio/issues">issue on github</a> if something isn’t working the way you think it should.</p>
-
-<p>We are actively looking for <a href="https://github.com/umdio/umdio/blob/master/CONTRIBUTING.md">contributors</a>! Tweet, email, or otherwise get in touch with us.</p>
-
-<!-- EXAMPLE -->
-
-<h2 id="api-endpoint">API Endpoint</h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://api.umd.io/
-</code></pre></div></div>
-
-<!-- END_EXAMPLE -->
-
-  </div>
-  <div class="post-example">
-    <p>Welcome to <strong>umd.io</strong>, the open-source API for University of Maryland data. If you are building a University data-focused app, hack, or project, you’re in the right place. This site will walk you through basic API use and document all supported API calls.</p>
-
-<p>Read more about the motivation and vision for the project in the <a href="https://github.com/umdio/umdio/blob/master/Motivations.md">blog post</a>.</p>
-
-<p><strong>umd.io</strong> is a GETful API. It follows RESTful conventions, but for now, you can only get data – you can’t create, update, or destroy.</p>
-
-<p>The API is in version 0. We are adding, changing, and breaking things all the time. <a href="mailto:hi@umd.io">Contact the team</a> or (preferably) create an <a href="https://github.com/umdio/umdio/issues">issue on github</a> if something isn’t working the way you think it should.</p>
-
-<p>We are actively looking for <a href="https://github.com/umdio/umdio/blob/master/CONTRIBUTING.md">contributors</a>! Tweet, email, or otherwise get in touch with us.</p>
-
-<!-- EXAMPLE -->
-
-<h2 id="api-endpoint">API Endpoint</h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://api.umd.io/
-</code></pre></div></div>
-
-<!-- END_EXAMPLE -->
-
-  </div>
-</section>
-<!-- PAGE CAT = api --> 
-
-<section class="post" id="versions">
-  <div class="post-description">
-    <h2>Versioning</h2>
-    <p>The current version is version 0.</p>
-
-<p>When we release a new version of the API that isn’t backwards-compatible, we’ll update the version number. The old version will remain accessible, but we’ll deprecate and no longer support them after a reasonable amount of time. Even though ‘/v0/courses’ might be very different than ‘/v1/courses’, your app that uses v0 will still work.</p>
-
-<p>Every request needs to specify the version number in the url. If you leave out the ‘/v0’ or ‘/v1’, or you’ll get an error.</p>
-
-<!-- EXAMPLE -->
-
-<p>The current version is live at:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://api.umd.io/v0
-</code></pre></div></div>
-
-<!-- END_EXAMPLE -->
-
-  </div>
-  <div class="post-example">
-    <p>The current version is version 0.</p>
-
-<p>When we release a new version of the API that isn’t backwards-compatible, we’ll update the version number. The old version will remain accessible, but we’ll deprecate and no longer support them after a reasonable amount of time. Even though ‘/v0/courses’ might be very different than ‘/v1/courses’, your app that uses v0 will still work.</p>
-
-<p>Every request needs to specify the version number in the url. If you leave out the ‘/v0’ or ‘/v1’, or you’ll get an error.</p>
-
-<!-- EXAMPLE -->
-
-<p>The current version is live at:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://api.umd.io/v0
-</code></pre></div></div>
-
-<!-- END_EXAMPLE -->
-
-  </div>
-</section>
-
-<section class="post" id="pagination">
-  <div class="post-description">
-    <h2>Pagination</h2>
-    <p>Endpoints that return a large amount of items are paginated to 30 items by default. You can specify further pages with the <code class="highlighter-rouge">?page</code> parameter. You can also set a custom page size up to 100 with the <code class="highlighter-rouge">?per_page</code> parameter.</p>
-
-<p><em>Note that page numbering is 1-based and that omitting the ?page parameter will return the first page.</em></p>
-
-<hr />
-
-<h3 id="link-header">Link Header:</h3>
-
-<p>The possible <code class="highlighter-rouge">rel</code> values are:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">next</code></td>
-      <td>Shows the URL of the immediate next page of results.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">last</code></td>
-      <td>Shows the URL of the last page of results.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">first</code></td>
-      <td>Shows the URL of the first page of results.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">prev</code></td>
-      <td>Shows the URL of the immediate previous page of results.</td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- EXAMPLE -->
-
-<p><em>Example:</em> <code class="highlighter-rouge">https://api.umd.io/v0/courses?page=2&amp;per_page=100</code></p>
-
-<p><br /><br /><br /><br /><br /><br /><br /></p>
-
-<h4 id="response-link-header">Response Link Header:</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Link: &lt;https://api.umd.io/v0/courses?page=2&amp;per_page=100&gt;; rel=”next”, &lt;https://api.umd.io/v0/courses?page=1&amp;per_page=100&gt;; rel=”prev”
-</code></pre></div></div>
-
-<!-- END_EXAMPLE -->
-
-  </div>
-  <div class="post-example">
-    <p>Endpoints that return a large amount of items are paginated to 30 items by default. You can specify further pages with the <code class="highlighter-rouge">?page</code> parameter. You can also set a custom page size up to 100 with the <code class="highlighter-rouge">?per_page</code> parameter.</p>
-
-<p><em>Note that page numbering is 1-based and that omitting the ?page parameter will return the first page.</em></p>
-
-<hr />
-
-<h3 id="link-header">Link Header:</h3>
-
-<p>The possible <code class="highlighter-rouge">rel</code> values are:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">next</code></td>
-      <td>Shows the URL of the immediate next page of results.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">last</code></td>
-      <td>Shows the URL of the last page of results.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">first</code></td>
-      <td>Shows the URL of the first page of results.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">prev</code></td>
-      <td>Shows the URL of the immediate previous page of results.</td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- EXAMPLE -->
-
-<p><em>Example:</em> <code class="highlighter-rouge">https://api.umd.io/v0/courses?page=2&amp;per_page=100</code></p>
-
-<p><br /><br /><br /><br /><br /><br /><br /></p>
-
-<h4 id="response-link-header">Response Link Header:</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Link: &lt;https://api.umd.io/v0/courses?page=2&amp;per_page=100&gt;; rel=”next”, &lt;https://api.umd.io/v0/courses?page=1&amp;per_page=100&gt;; rel=”prev”
-</code></pre></div></div>
-
-<!-- END_EXAMPLE -->
-
-  </div>
-</section>
-
-<section class="post" id="expanding_objects">
-  <div class="post-description">
-    <h2>Expanding objects</h2>
-    <p>Queries that return the ID of another object nested within the result can be expanded via the <code class="highlighter-rouge">?expand=&lt;object&gt;</code> parameter. For example, the query <code class="highlighter-rouge">https://api.umd.io/v0/courses/cmsc131</code> returns a “sections” key with an array of Section object ids. To expand these into their full objects, you can pass <code class="highlighter-rouge">?expand=sections</code> to expand the section ids to their section objects.</p>
-
-<!-- EXAMPLE -->
-
-<p>Example expand query: <code class="highlighter-rouge">https://api.umd.io/v0/courses/cmsc131?expand=sections</code></p>
-
-<p>Currently, this only works on the <a href="/courses/#get_courses">Get courses</a> endpoint.</p>
-
-<!-- END_EXAMPLE -->
-
-  </div>
-  <div class="post-example">
-    <p>Queries that return the ID of another object nested within the result can be expanded via the <code class="highlighter-rouge">?expand=&lt;object&gt;</code> parameter. For example, the query <code class="highlighter-rouge">https://api.umd.io/v0/courses/cmsc131</code> returns a “sections” key with an array of Section object ids. To expand these into their full objects, you can pass <code class="highlighter-rouge">?expand=sections</code> to expand the section ids to their section objects.</p>
-
-<!-- EXAMPLE -->
-
-<p>Example expand query: <code class="highlighter-rouge">https://api.umd.io/v0/courses/cmsc131?expand=sections</code></p>
-
-<p>Currently, this only works on the <a href="/courses/#get_courses">Get courses</a> endpoint.</p>
-
-<!-- END_EXAMPLE -->
-
-  </div>
-</section>
-
-<section class="post" id="errors">
-  <div class="post-description">
-    <h2>Errors</h2>
-    <p><strong>200 - OK</strong></p>
-
-<p>Everything worked as expected. If you aren’t getting the result you expected, it might mean that the data you are trying to access doesn’t actually exist in the database.</p>
-
-<p><strong>400 - Bad Request</strong></p>
-
-<p>This means that the url in your request couldn’t possibly match anything in the api, probably because of a misspelling.</p>
-
-<p><strong>404 - Not Found</strong></p>
-
-<p>The requested url doesn’t exist. This happens when the url isn’t anything on our end, not even a badly formed request.</p>
-
-<p><strong>500 - Internal Server Error</strong></p>
-
-<p>Something went wrong on our end. We try not to send you this. If you get one, let us know, and send us all you can about the circumstances of your error.</p>
-
-<!-- EXAMPLE -->
-<p><strong>Sample requests</strong></p>
-
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/ENGL101</code>
-200: Works as expected</p>
-
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/ene10</code>
-400: ‘ene’ is only 3 letters and ‘10’ is only two digits, so there is no way this could be a proper request.</p>
-
-<p><code class="highlighter-rouge">http://blargyblarg.umd.io</code>
-404: blargybarg isn’t on our server, so you won’t find it. If you misspell a word in a url, you might get this.</p>
-
-<p><code class="highlighter-rouge">https://api.umd.io/v5/courses</code>
-404: Courses aren’t at version 5 yet. (We’re not even up to version 1!)</p>
-
-<p><code class="highlighter-rouge">https://api.umd.io/courses</code>
-404: You need to specify a version number!</p>
-
-<p><code class="highlighter-rouge">https://api.umd.io/v0/course</code>
-404: ‘course’ isn’t an endpoint; ‘courses’ is. Even little misspellings will get ya!</p>
-
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/ENGL115</code>
-404: There’s no course with that course_id.</p>
-
-<!-- END -->
-
-  </div>
-  <div class="post-example">
-    <p><strong>200 - OK</strong></p>
-
-<p>Everything worked as expected. If you aren’t getting the result you expected, it might mean that the data you are trying to access doesn’t actually exist in the database.</p>
-
-<p><strong>400 - Bad Request</strong></p>
-
-<p>This means that the url in your request couldn’t possibly match anything in the api, probably because of a misspelling.</p>
-
-<p><strong>404 - Not Found</strong></p>
-
-<p>The requested url doesn’t exist. This happens when the url isn’t anything on our end, not even a badly formed request.</p>
-
-<p><strong>500 - Internal Server Error</strong></p>
-
-<p>Something went wrong on our end. We try not to send you this. If you get one, let us know, and send us all you can about the circumstances of your error.</p>
-
-<!-- EXAMPLE -->
-<p><strong>Sample requests</strong></p>
-
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/ENGL101</code>
-200: Works as expected</p>
-
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/ene10</code>
-400: ‘ene’ is only 3 letters and ‘10’ is only two digits, so there is no way this could be a proper request.</p>
-
-<p><code class="highlighter-rouge">http://blargyblarg.umd.io</code>
-404: blargybarg isn’t on our server, so you won’t find it. If you misspell a word in a url, you might get this.</p>
-
-<p><code class="highlighter-rouge">https://api.umd.io/v5/courses</code>
-404: Courses aren’t at version 5 yet. (We’re not even up to version 1!)</p>
-
-<p><code class="highlighter-rouge">https://api.umd.io/courses</code>
-404: You need to specify a version number!</p>
-
-<p><code class="highlighter-rouge">https://api.umd.io/v0/course</code>
-404: ‘course’ isn’t an endpoint; ‘courses’ is. Even little misspellings will get ya!</p>
-
-<p><code class="highlighter-rouge">https://api.umd.io/v0/courses/ENGL115</code>
-404: There’s no course with that course_id.</p>
-
-<!-- END -->
-
-  </div>
-</section>
-
-<section class="post" id="tips-tricks">
-  <div class="post-description">
-    <h2>Tips and Tricks</h2>
-    <p>While you are exploring the api via the browser, the <a href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa">JSON Formatter</a> extension will make the  output readable.</p>
-
-  </div>
-  <div class="post-example">
-    <p>While you are exploring the api via the browser, the <a href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa">JSON Formatter</a> extension will make the  output readable.</p>
-
-  </div>
-</section>
-
-<section class="post" id="terms">
-  <div class="post-description">
-    <h2>Terms of Use</h2>
-    <p>Don’t just skip these! By using the site and the API, you automatically agree to these Terms of Use.</p>
-
-<p>umd.io is built by students for students - we aren’t the school, and we aren’t a corporation. We try to provide the best tool that we can, and we know that he better service we provide, the more students will rely on it, and the better everyone’s experience will be.</p>
-
-<p>That being said, we can’t guarantee that the API will always work the way it is documented, the way it should, or even work at all! We’re offering the service to be helpful, and we are licensed so that you can use it for any kind of project - a small one for yourself or for class, or a for-profit business. Still, we make no warranties or guarantees of any kind, and you, by using the site and service, fully indemnify and hold harmless umd.io and everyone associated with it. You also agree to limit our liability as much as the law permits.</p>
-
-<p>We don’t currently have any rate limits, but we might at some point, at will at that time update these terms. We reserve the right to limit your use or even shut you out entirely. We would likely only do this to protect the service, such as if you made so many calls to the API that it couldn’t handle it.</p>
-
-<p>We don’t collect any personally identifiable information, but the IP address of whatever application is calling the API will probably end up in log files. We don’t share these with anyone, and they would be tough for someone to steal, but again, we don’t guarantee anything.</p>
-
-<p>We’re based in Prince George’s County, Maryland, and if it came to it, you agree that any legal dispute would be settled in those courts.</p>
-
-<p>These terms went into effect on 5/5/2015, when they were written. If they are updated, we’ll post the notice here, and the changes will go into effect 15 days after they are posted here.</p>
-
-  </div>
-  <div class="post-example">
-    <p>Don’t just skip these! By using the site and the API, you automatically agree to these Terms of Use.</p>
-
-<p>umd.io is built by students for students - we aren’t the school, and we aren’t a corporation. We try to provide the best tool that we can, and we know that he better service we provide, the more students will rely on it, and the better everyone’s experience will be.</p>
-
-<p>That being said, we can’t guarantee that the API will always work the way it is documented, the way it should, or even work at all! We’re offering the service to be helpful, and we are licensed so that you can use it for any kind of project - a small one for yourself or for class, or a for-profit business. Still, we make no warranties or guarantees of any kind, and you, by using the site and service, fully indemnify and hold harmless umd.io and everyone associated with it. You also agree to limit our liability as much as the law permits.</p>
-
-<p>We don’t currently have any rate limits, but we might at some point, at will at that time update these terms. We reserve the right to limit your use or even shut you out entirely. We would likely only do this to protect the service, such as if you made so many calls to the API that it couldn’t handle it.</p>
-
-<p>We don’t collect any personally identifiable information, but the IP address of whatever application is calling the API will probably end up in log files. We don’t share these with anyone, and they would be tough for someone to steal, but again, we don’t guarantee anything.</p>
-
-<p>We’re based in Prince George’s County, Maryland, and if it came to it, you agree that any legal dispute would be settled in those courts.</p>
-
-<p>These terms went into effect on 5/5/2015, when they were written. If they are updated, we’ll post the notice here, and the changes will go into effect 15 days after they are posted here.</p>
-
-  </div>
-</section>
+            <div class="post-description">
+              <h1>Introduction</h1>
+              <p>
+                Welcome to <strong>umd.io</strong>, the open-source API for
+                University of Maryland data. If you are building a University
+                data-focused app, hack, or project, you’re in the right place.
+                This site will walk you through basic API use and document all
+                supported API calls.
+              </p>
+
+              <p>
+                Read more about the motivation and vision for the project in the
+                <a
+                  href="https://github.com/umdio/umdio/blob/master/Motivations.md"
+                  >blog post</a
+                >.
+              </p>
+
+              <p>
+                <strong>umd.io</strong> is a GETful API. It follows RESTful
+                conventions, but for now, you can only get data – you can’t
+                create, update, or destroy.
+              </p>
+
+              <p>
+                The API is in version 0. We are adding, changing, and breaking
+                things all the time.
+                <a href="mailto:hi@umd.io">Contact the team</a> or (preferably)
+                create an
+                <a href="https://github.com/umdio/umdio/issues"
+                  >issue on github</a
+                >
+                if something isn’t working the way you think it should.
+              </p>
+
+              <p>
+                We are actively looking for
+                <a
+                  href="https://github.com/umdio/umdio/blob/master/CONTRIBUTING.md"
+                  >contributors</a
+                >! Tweet, email, or otherwise get in touch with us.
+              </p>
+
+              <!-- EXAMPLE -->
+
+              <h2 id="api-endpoint">API Endpoint</h2>
+              <div class="highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code>https://api.umd.io/
+</code></pre>
+                </div>
+              </div>
+
+              <!-- END_EXAMPLE -->
+            </div>
+            <div class="post-example">
+              <p>
+                Welcome to <strong>umd.io</strong>, the open-source API for
+                University of Maryland data. If you are building a University
+                data-focused app, hack, or project, you’re in the right place.
+                This site will walk you through basic API use and document all
+                supported API calls.
+              </p>
+
+              <p>
+                Read more about the motivation and vision for the project in the
+                <a
+                  href="https://github.com/umdio/umdio/blob/master/Motivations.md"
+                  >blog post</a
+                >.
+              </p>
+
+              <p>
+                <strong>umd.io</strong> is a GETful API. It follows RESTful
+                conventions, but for now, you can only get data – you can’t
+                create, update, or destroy.
+              </p>
+
+              <p>
+                The API is in version 0. We are adding, changing, and breaking
+                things all the time.
+                <a href="mailto:hi@umd.io">Contact the team</a> or (preferably)
+                create an
+                <a href="https://github.com/umdio/umdio/issues"
+                  >issue on github</a
+                >
+                if something isn’t working the way you think it should.
+              </p>
+
+              <p>
+                We are actively looking for
+                <a
+                  href="https://github.com/umdio/umdio/blob/master/CONTRIBUTING.md"
+                  >contributors</a
+                >! Tweet, email, or otherwise get in touch with us.
+              </p>
+
+              <!-- EXAMPLE -->
+
+              <h2 id="api-endpoint">API Endpoint</h2>
+              <div class="highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code>https://api.umd.io/
+</code></pre>
+                </div>
+              </div>
+
+              <!-- END_EXAMPLE -->
+            </div>
+          </section>
+          <!-- PAGE CAT = api -->
+
+          <section class="post" id="versions">
+            <div class="post-description">
+              <h2>Versioning</h2>
+              <p>The current version is version 0.</p>
+
+              <p>
+                When we release a new version of the API that isn’t
+                backwards-compatible, we’ll update the version number. The old
+                version will remain accessible, but we’ll deprecate and no
+                longer support them after a reasonable amount of time. Even
+                though ‘/v0/courses’ might be very different than ‘/v1/courses’,
+                your app that uses v0 will still work.
+              </p>
+
+              <p>
+                Every request needs to specify the version number in the url. If
+                you leave out the ‘/v0’ or ‘/v1’, or you’ll get an error.
+              </p>
+
+              <!-- EXAMPLE -->
+
+              <p>The current version is live at:</p>
+
+              <div class="highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code>https://api.umd.io/v0
+</code></pre>
+                </div>
+              </div>
+
+              <!-- END_EXAMPLE -->
+            </div>
+            <div class="post-example">
+              <p>The current version is version 0.</p>
+
+              <p>
+                When we release a new version of the API that isn’t
+                backwards-compatible, we’ll update the version number. The old
+                version will remain accessible, but we’ll deprecate and no
+                longer support them after a reasonable amount of time. Even
+                though ‘/v0/courses’ might be very different than ‘/v1/courses’,
+                your app that uses v0 will still work.
+              </p>
+
+              <p>
+                Every request needs to specify the version number in the url. If
+                you leave out the ‘/v0’ or ‘/v1’, or you’ll get an error.
+              </p>
+
+              <!-- EXAMPLE -->
+
+              <p>The current version is live at:</p>
+
+              <div class="highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code>https://api.umd.io/v0
+</code></pre>
+                </div>
+              </div>
+
+              <!-- END_EXAMPLE -->
+            </div>
+          </section>
+
+          <section class="post" id="pagination">
+            <div class="post-description">
+              <h2>Pagination</h2>
+              <p>
+                Endpoints that return a large amount of items are paginated to
+                30 items by default. You can specify further pages with the
+                <code class="highlighter-rouge">?page</code> parameter. You can
+                also set a custom page size up to 100 with the
+                <code class="highlighter-rouge">?per_page</code> parameter.
+              </p>
+
+              <p>
+                <em
+                  >Note that page numbering is 1-based and that omitting the
+                  ?page parameter will return the first page.</em
+                >
+              </p>
+
+              <hr />
+
+              <h3 id="link-header">Link Header:</h3>
+
+              <p>
+                The possible <code class="highlighter-rouge">rel</code> values
+                are:
+              </p>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code class="highlighter-rouge">next</code></td>
+                    <td>
+                      Shows the URL of the immediate next page of results.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="highlighter-rouge">last</code></td>
+                    <td>Shows the URL of the last page of results.</td>
+                  </tr>
+                  <tr>
+                    <td><code class="highlighter-rouge">first</code></td>
+                    <td>Shows the URL of the first page of results.</td>
+                  </tr>
+                  <tr>
+                    <td><code class="highlighter-rouge">prev</code></td>
+                    <td>
+                      Shows the URL of the immediate previous page of results.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- EXAMPLE -->
+
+              <p>
+                <em>Example:</em>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses?page=2&amp;per_page=100</code
+                >
+              </p>
+
+              <p><br /><br /><br /><br /><br /><br /><br /></p>
+
+              <h4 id="response-link-header">Response Link Header:</h4>
+              <div class="highlighter-rouge">
+                <div class="highlight">
+                  <pre
+                    class="highlight"
+                  ><code>Link: &lt;https://api.umd.io/v0/courses?page=2&amp;per_page=100&gt;; rel=”next”, &lt;https://api.umd.io/v0/courses?page=1&amp;per_page=100&gt;; rel=”prev”
+</code></pre>
+                </div>
+              </div>
+
+              <!-- END_EXAMPLE -->
+            </div>
+            <div class="post-example">
+              <p>
+                Endpoints that return a large amount of items are paginated to
+                30 items by default. You can specify further pages with the
+                <code class="highlighter-rouge">?page</code> parameter. You can
+                also set a custom page size up to 100 with the
+                <code class="highlighter-rouge">?per_page</code> parameter.
+              </p>
+
+              <p>
+                <em
+                  >Note that page numbering is 1-based and that omitting the
+                  ?page parameter will return the first page.</em
+                >
+              </p>
+
+              <hr />
+
+              <h3 id="link-header">Link Header:</h3>
+
+              <p>
+                The possible <code class="highlighter-rouge">rel</code> values
+                are:
+              </p>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code class="highlighter-rouge">next</code></td>
+                    <td>
+                      Shows the URL of the immediate next page of results.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="highlighter-rouge">last</code></td>
+                    <td>Shows the URL of the last page of results.</td>
+                  </tr>
+                  <tr>
+                    <td><code class="highlighter-rouge">first</code></td>
+                    <td>Shows the URL of the first page of results.</td>
+                  </tr>
+                  <tr>
+                    <td><code class="highlighter-rouge">prev</code></td>
+                    <td>
+                      Shows the URL of the immediate previous page of results.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- EXAMPLE -->
+
+              <p>
+                <em>Example:</em>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses?page=2&amp;per_page=100</code
+                >
+              </p>
+
+              <p><br /><br /><br /><br /><br /><br /><br /></p>
+
+              <h4 id="response-link-header">Response Link Header:</h4>
+              <div class="highlighter-rouge">
+                <div class="highlight">
+                  <pre
+                    class="highlight"
+                  ><code>Link: &lt;https://api.umd.io/v0/courses?page=2&amp;per_page=100&gt;; rel=”next”, &lt;https://api.umd.io/v0/courses?page=1&amp;per_page=100&gt;; rel=”prev”
+</code></pre>
+                </div>
+              </div>
+
+              <!-- END_EXAMPLE -->
+            </div>
+          </section>
+
+          <section class="post" id="expanding_objects">
+            <div class="post-description">
+              <h2>Expanding objects</h2>
+              <p>
+                Queries that return the ID of another object nested within the
+                result can be expanded via the
+                <code class="highlighter-rouge">?expand=&lt;object&gt;</code>
+                parameter. For example, the query
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/cmsc131</code
+                >
+                returns a “sections” key with an array of Section object ids. To
+                expand these into their full objects, you can pass
+                <code class="highlighter-rouge">?expand=sections</code> to
+                expand the section ids to their section objects.
+              </p>
+
+              <!-- EXAMPLE -->
+
+              <p>
+                Example expand query:
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/cmsc131?expand=sections</code
+                >
+              </p>
+
+              <p>
+                Currently, this only works on the
+                <a href="./courses/#get_courses">Get courses</a> endpoint.
+              </p>
+
+              <!-- END_EXAMPLE -->
+            </div>
+            <div class="post-example">
+              <p>
+                Queries that return the ID of another object nested within the
+                result can be expanded via the
+                <code class="highlighter-rouge">?expand=&lt;object&gt;</code>
+                parameter. For example, the query
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/cmsc131</code
+                >
+                returns a “sections” key with an array of Section object ids. To
+                expand these into their full objects, you can pass
+                <code class="highlighter-rouge">?expand=sections</code> to
+                expand the section ids to their section objects.
+              </p>
+
+              <!-- EXAMPLE -->
+
+              <p>
+                Example expand query:
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/cmsc131?expand=sections</code
+                >
+              </p>
+
+              <p>
+                Currently, this only works on the
+                <a href="./courses/#get_courses">Get courses</a> endpoint.
+              </p>
+
+              <!-- END_EXAMPLE -->
+            </div>
+          </section>
+
+          <section class="post" id="errors">
+            <div class="post-description">
+              <h2>Errors</h2>
+              <p><strong>200 - OK</strong></p>
+
+              <p>
+                Everything worked as expected. If you aren’t getting the result
+                you expected, it might mean that the data you are trying to
+                access doesn’t actually exist in the database.
+              </p>
+
+              <p><strong>400 - Bad Request</strong></p>
+
+              <p>
+                This means that the url in your request couldn’t possibly match
+                anything in the api, probably because of a misspelling.
+              </p>
+
+              <p><strong>404 - Not Found</strong></p>
+
+              <p>
+                The requested url doesn’t exist. This happens when the url isn’t
+                anything on our end, not even a badly formed request.
+              </p>
+
+              <p><strong>500 - Internal Server Error</strong></p>
+
+              <p>
+                Something went wrong on our end. We try not to send you this. If
+                you get one, let us know, and send us all you can about the
+                circumstances of your error.
+              </p>
+
+              <!-- EXAMPLE -->
+              <p><strong>Sample requests</strong></p>
+
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/ENGL101</code
+                >
+                200: Works as expected
+              </p>
+
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/ene10</code
+                >
+                400: ‘ene’ is only 3 letters and ‘10’ is only two digits, so
+                there is no way this could be a proper request.
+              </p>
+
+              <p>
+                <code class="highlighter-rouge">http://blargyblarg.umd.io</code>
+                404: blargybarg isn’t on our server, so you won’t find it. If
+                you misspell a word in a url, you might get this.
+              </p>
+
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v5/courses</code
+                >
+                404: Courses aren’t at version 5 yet. (We’re not even up to
+                version 1!)
+              </p>
+
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/courses</code
+                >
+                404: You need to specify a version number!
+              </p>
+
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/course</code
+                >
+                404: ‘course’ isn’t an endpoint; ‘courses’ is. Even little
+                misspellings will get ya!
+              </p>
+
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/ENGL115</code
+                >
+                404: There’s no course with that course_id.
+              </p>
+
+              <!-- END -->
+            </div>
+            <div class="post-example">
+              <p><strong>200 - OK</strong></p>
+
+              <p>
+                Everything worked as expected. If you aren’t getting the result
+                you expected, it might mean that the data you are trying to
+                access doesn’t actually exist in the database.
+              </p>
+
+              <p><strong>400 - Bad Request</strong></p>
+
+              <p>
+                This means that the url in your request couldn’t possibly match
+                anything in the api, probably because of a misspelling.
+              </p>
+
+              <p><strong>404 - Not Found</strong></p>
+
+              <p>
+                The requested url doesn’t exist. This happens when the url isn’t
+                anything on our end, not even a badly formed request.
+              </p>
+
+              <p><strong>500 - Internal Server Error</strong></p>
+
+              <p>
+                Something went wrong on our end. We try not to send you this. If
+                you get one, let us know, and send us all you can about the
+                circumstances of your error.
+              </p>
+
+              <!-- EXAMPLE -->
+              <p><strong>Sample requests</strong></p>
+
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/ENGL101</code
+                >
+                200: Works as expected
+              </p>
+
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/ene10</code
+                >
+                400: ‘ene’ is only 3 letters and ‘10’ is only two digits, so
+                there is no way this could be a proper request.
+              </p>
+
+              <p>
+                <code class="highlighter-rouge">http://blargyblarg.umd.io</code>
+                404: blargybarg isn’t on our server, so you won’t find it. If
+                you misspell a word in a url, you might get this.
+              </p>
+
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v5/courses</code
+                >
+                404: Courses aren’t at version 5 yet. (We’re not even up to
+                version 1!)
+              </p>
+
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/courses</code
+                >
+                404: You need to specify a version number!
+              </p>
+
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/course</code
+                >
+                404: ‘course’ isn’t an endpoint; ‘courses’ is. Even little
+                misspellings will get ya!
+              </p>
+
+              <p>
+                <code class="highlighter-rouge"
+                  >https://api.umd.io/v0/courses/ENGL115</code
+                >
+                404: There’s no course with that course_id.
+              </p>
+
+              <!-- END -->
+            </div>
+          </section>
+
+          <section class="post" id="tips-tricks">
+            <div class="post-description">
+              <h2>Tips and Tricks</h2>
+              <p>
+                While you are exploring the api via the browser, the
+                <a
+                  href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa"
+                  >JSON Formatter</a
+                >
+                extension will make the output readable.
+              </p>
+            </div>
+            <div class="post-example">
+              <p>
+                While you are exploring the api via the browser, the
+                <a
+                  href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa"
+                  >JSON Formatter</a
+                >
+                extension will make the output readable.
+              </p>
+            </div>
+          </section>
+
+          <section class="post" id="terms">
+            <div class="post-description">
+              <h2>Terms of Use</h2>
+              <p>
+                Don’t just skip these! By using the site and the API, you
+                automatically agree to these Terms of Use.
+              </p>
+
+              <p>
+                umd.io is built by students for students - we aren’t the school,
+                and we aren’t a corporation. We try to provide the best tool
+                that we can, and we know that he better service we provide, the
+                more students will rely on it, and the better everyone’s
+                experience will be.
+              </p>
+
+              <p>
+                That being said, we can’t guarantee that the API will always
+                work the way it is documented, the way it should, or even work
+                at all! We’re offering the service to be helpful, and we are
+                licensed so that you can use it for any kind of project - a
+                small one for yourself or for class, or a for-profit business.
+                Still, we make no warranties or guarantees of any kind, and you,
+                by using the site and service, fully indemnify and hold harmless
+                umd.io and everyone associated with it. You also agree to limit
+                our liability as much as the law permits.
+              </p>
+
+              <p>
+                We don’t currently have any rate limits, but we might at some
+                point, at will at that time update these terms. We reserve the
+                right to limit your use or even shut you out entirely. We would
+                likely only do this to protect the service, such as if you made
+                so many calls to the API that it couldn’t handle it.
+              </p>
+
+              <p>
+                We don’t collect any personally identifiable information, but
+                the IP address of whatever application is calling the API will
+                probably end up in log files. We don’t share these with anyone,
+                and they would be tough for someone to steal, but again, we
+                don’t guarantee anything.
+              </p>
+
+              <p>
+                We’re based in Prince George’s County, Maryland, and if it came
+                to it, you agree that any legal dispute would be settled in
+                those courts.
+              </p>
+
+              <p>
+                These terms went into effect on 5/5/2015, when they were
+                written. If they are updated, we’ll post the notice here, and
+                the changes will go into effect 15 days after they are posted
+                here.
+              </p>
+            </div>
+            <div class="post-example">
+              <p>
+                Don’t just skip these! By using the site and the API, you
+                automatically agree to these Terms of Use.
+              </p>
+
+              <p>
+                umd.io is built by students for students - we aren’t the school,
+                and we aren’t a corporation. We try to provide the best tool
+                that we can, and we know that he better service we provide, the
+                more students will rely on it, and the better everyone’s
+                experience will be.
+              </p>
+
+              <p>
+                That being said, we can’t guarantee that the API will always
+                work the way it is documented, the way it should, or even work
+                at all! We’re offering the service to be helpful, and we are
+                licensed so that you can use it for any kind of project - a
+                small one for yourself or for class, or a for-profit business.
+                Still, we make no warranties or guarantees of any kind, and you,
+                by using the site and service, fully indemnify and hold harmless
+                umd.io and everyone associated with it. You also agree to limit
+                our liability as much as the law permits.
+              </p>
+
+              <p>
+                We don’t currently have any rate limits, but we might at some
+                point, at will at that time update these terms. We reserve the
+                right to limit your use or even shut you out entirely. We would
+                likely only do this to protect the service, such as if you made
+                so many calls to the API that it couldn’t handle it.
+              </p>
+
+              <p>
+                We don’t collect any personally identifiable information, but
+                the IP address of whatever application is calling the API will
+                probably end up in log files. We don’t share these with anyone,
+                and they would be tough for someone to steal, but again, we
+                don’t guarantee anything.
+              </p>
+
+              <p>
+                We’re based in Prince George’s County, Maryland, and if it came
+                to it, you agree that any legal dispute would be settled in
+                those courts.
+              </p>
+
+              <p>
+                These terms went into effect on 5/5/2015, when they were
+                written. If they are updated, we’ll post the notice here, and
+                the changes will go into effect 15 days after they are posted
+                here.
+              </p>
+            </div>
+          </section>
 
           <footer>
-  <div class="footer-text">
-  made with love, by students, for students. <br>
-  get in touch if you want help, or if you want to help. <br><br>
-  <a href="mailto:hi@umd.io">email</a> &nbsp;&nbsp;
-  <a href="http://github.com/umdio">github</a> &nbsp;&nbsp;
-  © umdio 2015-2019
-  </div>
-</footer>
-
+            <div class="footer-text">
+              made with love, by students, for students. <br />
+              get in touch if you want help, or if you want to help.
+              <br /><br />
+              <a href="mailto:hi@umd.io">email</a> &nbsp;&nbsp;
+              <a href="http://github.com/umdio">github</a> &nbsp;&nbsp; © umdio
+              2015-2019
+            </div>
+          </footer>
         </div>
       </div>
     </div>
